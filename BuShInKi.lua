@@ -6721,6 +6721,7 @@ end
 end --- Chat_Type = 'UserBot' 
 end
 end
+
 function tdcli_update_callback(data)
 if data.ID == "UpdateChannel" then 
 if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
