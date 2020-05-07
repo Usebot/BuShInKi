@@ -6086,8 +6086,8 @@ if text == ("تحديث السورس") and DevBuShInKi(msg) then
 send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
 os.execute('rm -rf BuShInKi.lua')
 os.execute('rm -rf run.lua')
-os.execute('wget https://raw.githubusercontent.com/BuShInKikid/BuShInKi/master/BuShInKi.lua')
-os.execute('wget https://raw.githubusercontent.com/BuShInKikid/BuShInKi/master/run.lua')
+os.execute('wget https://raw.githubusercontent.com/Usebot/BuShInKi/master/BuShInKi.lua')
+os.execute('wget https://raw.githubusercontent.com/Usebot/BuShInKi/master/run.lua')
 dofile('BuShInKi.lua')  
 return false
 end
@@ -7172,8 +7172,8 @@ if text == "تحديث السورس 📥" then
 send(msg.chat_id_,msg.id_,'☑┇تم التحديث')
 os.execute('rm -rf BuShInKi.lua')
 os.execute('rm -rf run.lua')
-os.execute('wget https://raw.githubusercontent.com/BuShInKikid/BuShInKi/master/BuShInKi.lua')
-os.execute('wget https://raw.githubusercontent.com/BuShInKikid/BuShInKi/master/run.lua')
+os.execute('wget https://raw.githubusercontent.com/Usebot/BuShInKi/master/BuShInKi.lua')
+os.execute('wget https://raw.githubusercontent.com/Usebot/BuShInKi/master/run.lua')
 dofile('BuShInKi.lua')  
 return false
 end
