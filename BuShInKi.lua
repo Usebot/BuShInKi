@@ -5441,6 +5441,12 @@ Teext = [[
 send(msg.chat_id_, msg.id_,Teext) 
 end
 if text == 'رسائلي' then
+local url,res = http.request('https://ifff.ga/Api/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@iraqapi]')   
+return false 
+end
 local nummsg = database:get(bot_id..'BuShInKi:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 1
 local Text = '📨┇عدد رسائلك هنا *~ '..nummsg..'*'
 send(msg.chat_id_, msg.id_,Text) 
