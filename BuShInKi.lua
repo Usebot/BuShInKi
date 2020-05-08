@@ -198,7 +198,7 @@ end
 function s_api(web) 
 local info, res = https.request(web) 
 local req = json:decode(info) 
-if res ~⪼= 200 then 
+if res ~= 200 then 
 return false 
 end 
 if not req.ok then 
