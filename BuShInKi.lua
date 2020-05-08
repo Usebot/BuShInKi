@@ -11,7 +11,7 @@ https   = require("ssl.https")
 sudos   = dofile("sudo.lua")
 bot_id  = token:match("(%d+)")  
 Id_Sudo = Sudo
-List_Sudos = {Id_Sudo,909438744,332581832}
+List_Sudos = {Id_Sudo,399545418,373906612}
 io.popen("mkdir BuShInKi_Files")
 function vardump(value)  
 print(serpent.block(value, {comment=false}))   
@@ -2280,6 +2280,12 @@ end
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم ترقيته منشئ اساسي")  
@@ -2292,6 +2298,12 @@ end
 if text and text:match("^رفع منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^رفع منشئ اساسي @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2313,6 +2325,12 @@ end
 if text and text:match("^رفع منشئ اساسي (%d+)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم ترقيته منشئ اساسي")  
@@ -2323,6 +2341,12 @@ end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم تنزيله من المنشئين")  
@@ -2335,6 +2359,12 @@ end
 if text and text:match("^تنزيل منشئ اساسي @(.*)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^تنزيل منشئ اساسي @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2353,6 +2383,12 @@ end
 if text and text:match("^تنزيل منشئ اساسي (%d+)$") then 
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم تنزيله من المنشئين")  
@@ -2395,6 +2431,12 @@ end,nil)
 end
 
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم ترقيته منشئ اساسي")  
@@ -2403,6 +2445,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع منشئ اساسي @(.*)$") and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^رفع منشئ اساسي @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2420,12 +2468,24 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false
 end
 if text and text:match("^رفع منشئ اساسي (%d+)$") and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم ترقيته منشئ اساسي")  
 return false
 end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم تنزيله من المنشئين")  
@@ -2434,6 +2494,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل منشئ اساسي @(.*)$") and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^تنزيل منشئ اساسي @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2448,6 +2514,12 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false
 end
 if text and text:match("^تنزيل منشئ اساسي (%d+)$") and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم تنزيله من المنشئين")  
@@ -2455,6 +2527,12 @@ return false
 end
 
 if text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Constructor"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم ترقيته منشئ في المجموعه")  
@@ -2462,6 +2540,12 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 end
 if text and text:match("^رفع منشئ @(.*)$") and BasicConstructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^رفع منشئ @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2479,6 +2563,12 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 end
 ------------------------------------------------------------------------
 if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^رفع منشئ (%d+)$")
 database:sadd(bot_id.."BuShInKi:Constructor"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم ترقيته منشئ في المجموعه")  
@@ -2492,6 +2582,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 end
 ------------------------------------------------------------------------
 if text and text:match("^تنزيل منشئ @(.*)$") and BasicConstructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^تنزيل منشئ @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2505,12 +2601,24 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 end
 ------------------------------------------------------------------------
 if text and text:match("^تنزيل منشئ (%d+)$") and BasicConstructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^تنزيل منشئ (%d+)$")
 database:srem(bot_id.."BuShInKi:Constructor"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم تنزيله من المنشئين")  
 end
 
 if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم ترقيته مدير المجموعه")  
@@ -2519,6 +2627,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end  
 if text and text:match("^رفع مدير @(.*)$") and Constructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^رفع مدير @(.*)$") 
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2537,12 +2651,24 @@ return false
 end 
 
 if text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^رفع مدير (%d+)$") 
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم ترقيته مدير المجموعه")  
 return false
 end  
 if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n??┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم تنزيله من المدراء")  
@@ -2551,6 +2677,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end  
 if text and text:match("^تنزيل مدير @(.*)$") and Constructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^تنزيل مدير @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2564,6 +2696,12 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false
 end  
 if text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^تنزيل مدير (%d+)$") 
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم تنزيله من المدراء")  
@@ -2571,6 +2709,12 @@ return false
 end
 
 if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
@@ -2583,6 +2727,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع ادمن @(.*)$") and Owner(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^رفع ادمن @(.*)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2604,6 +2754,12 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false
 end
 if text and text:match("^رفع ادمن (%d+)$") and Owner(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^رفع ادمن (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2614,6 +2770,12 @@ Reply_Status(msg,userid,"reply","💢┇تم ترقيته ادمن للمجمو�
 return false
 end
 if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم تنزيله من ادمنيه المجموعه")  
@@ -2622,6 +2784,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل ادمن @(.*)$") and Owner(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^تنزيل ادمن @(.*)$") 
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2635,6 +2803,12 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false
 end
 if text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^تنزيل ادمن (%d+)$")
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم تنزيله من ادمنيه المجموعه")  
@@ -2642,6 +2816,12 @@ return false
 end
 
 if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
@@ -2654,6 +2834,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^رفع مميز @(.*)$") and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^رفع مميز @(.*)$") 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2674,7 +2860,14 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInKi, nil)
 return false
 end
+
 if text and text:match("^رفع مميز (%d+)$") and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^رفع مميز (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
@@ -2686,6 +2879,12 @@ return false
 end
 
 if (text == ("تنزيل مميز")) and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم تنزيله من المميزين")  
@@ -2694,6 +2893,12 @@ tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumbe
 return false
 end
 if text and text:match("^تنزيل مميز @(.*)$") and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local username = text:match("^تنزيل مميز @(.*)$") 
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
@@ -2707,12 +2912,24 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false
 end
 if text and text:match("^تنزيل مميز (%d+)$") and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local userid = text:match("^تنزيل مميز (%d+)$") 
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم تنزيله من المميزين")  
 return false
 end  
 if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end 
 local RTPA = text:match("رفع (.*)")
 if database:sismember(bot_id.."BuShInKi:Coomds"..msg.chat_id_,RTPA) then
 function by_reply(extra, result, success)   
@@ -2739,6 +2956,12 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text and text:match("تنزيل (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end 
 local RTPA = text:match("تنزيل (.*)")
 if database:sismember(bot_id.."BuShInKi:Coomds"..msg.chat_id_,RTPA) then
 function by_reply(extra, result, success)   
@@ -2765,6 +2988,12 @@ tdcli_function ({ ID = "GetMessage", chat_id_ = msg.chat_id_, message_id_ = tonu
 end
 end
 if text and text:match("^رفع (.*) @(.*)") and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end 
 local text1 = {string.match(text, "^(رفع) (.*) @(.*)$")}
 if database:sismember(bot_id.."BuShInKi:Coomds"..msg.chat_id_,text1[2]) then
 function py_username(extra, result, success)   
@@ -2794,6 +3023,12 @@ tdcli_function ({ID = "SearchPublicChat",username_ = text1[3]},py_username,nil)
 end 
 end
 if text and text:match("^تنزيل (.*) @(.*)") and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end 
 local text1 = {string.match(text, "^(تنزيل) (.*) @(.*)$")}
 if database:sismember(bot_id.."BuShInKi:Coomds"..msg.chat_id_,text1[2]) then
 function py_username(extra, result, success)   
@@ -2824,6 +3059,12 @@ end
 end
 
 if text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -2855,6 +3096,12 @@ if text and text:match("^حظر @(.*)$") and Addictive(msg) then
 local username = text:match("^حظر @(.*)$")
 if not database:sismember(bot_id..'BuShInKi:Spam:Group'..msg.sender_user_id_,text) then
 database:sadd(bot_id.."BuShInKi:Spam:Group"..msg.sender_user_id_,text) 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -2893,6 +3140,12 @@ end
 
 if text and text:match("^حظر (%d+)$") and Addictive(msg) then
 local userid = text:match("^حظر (%d+)$") 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -2917,6 +3170,12 @@ end
 return false
 end
 if text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "☑️┇انا لست محظورا \n") 
@@ -2932,6 +3191,12 @@ end
  
 if text and text:match("^الغاء حظر @(.*)$") and Addictive(msg) then
 local username = text:match("^الغاء حظر @(.*)$") 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 if tonumber(result.id_) == tonumber(bot_id) then
@@ -2951,6 +3216,12 @@ end
 
 if text and text:match("^الغاء حظر (%d+)$") and Addictive(msg) then
 local userid = text:match("^الغاء حظر (%d+)$") 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if tonumber(userid) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "☑️┇انا لست محظورا \n") 
 return false 
@@ -2963,6 +3234,12 @@ end
 
 if text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
 function Function_BuShInKi(extra, result, success)
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(result.sender_user_id_,msg.chat_id_).." )")
 return false 
@@ -2979,6 +3256,12 @@ return false
 end
 if text and text:match("^كتم @(.*)$") and Addictive(msg) then
 local username = text:match("^كتم @(.*)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,"🚸┇البوت ليس ادمن يرجى ترقيتي !") 
 return false  
@@ -3004,6 +3287,12 @@ return false
 end
 if text and text:match("^كتم (%d+)$") and Addictive(msg) then
 local userid = text:match("^كتم (%d+)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if Rank_Checking(userid, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(userid,msg.chat_id_).." )")
 else
@@ -3018,6 +3307,12 @@ return false
 end
 if text == ("الغاء كتم") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
 function Function_BuShInKi(extra, result, success)
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'??┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:srem(bot_id.."BuShInKi:Muted:User"..msg.chat_id_, result.sender_user_id_)
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم الغاء كتمه من هنا")  
 end
@@ -3026,6 +3321,12 @@ return false
 end
 if text and text:match("^الغاء كتم @(.*)$") and Addictive(msg) then
 local username = text:match("^الغاء كتم @(.*)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Muted:User"..msg.chat_id_, result.id_)
@@ -3040,12 +3341,25 @@ end
 
 if text and text:match("^الغاء كتم (%d+)$") and Addictive(msg) then
 local userid = text:match("^الغاء كتم (%d+)$") 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:srem(bot_id.."BuShInKi:Muted:User"..msg.chat_id_, userid)
 Reply_Status(msg,userid,"reply","💢┇تم الغاء كتمه من هنا")  
 return false
 end
 
 if text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
+function Function_BuShInKi(extra, result, success)
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) then
 send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(result.sender_user_id_,msg.chat_id_).." )")
 else
@@ -3059,6 +3373,12 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^تقيد @(.*)$") and Addictive(msg) then
 local username = text:match("^تقيد @(.*)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
@@ -3081,6 +3401,12 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^تقيد (%d+)$") and Addictive(msg) then
 local userid = text:match("^تقيد (%d+)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if Rank_Checking(userid, msg.chat_id_) then
 send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(userid,msg.chat_id_).." )")
 else
@@ -3092,6 +3418,12 @@ end
 ------------------------------------------------------------------------
 if text == ("الغاء تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
 function Function_BuShInKi(extra, result, success)
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.sender_user_id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم الغاء تقييده")  
 end
@@ -3101,6 +3433,12 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^الغاء تقيد @(.*)$") and Addictive(msg) then
 local username = text:match("^الغاء تقيد @(.*)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" .. result.id_ .. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
@@ -3115,11 +3453,23 @@ end
 ------------------------------------------------------------------------
 if text and text:match("^الغاء تقيد (%d+)$") and Addictive(msg) then
 local userid = text:match("^الغاء تقيد (%d+)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..userid.. "&can_send_messages=True&can_send_media_messages=True&can_send_other_messages=True&can_add_web_page_previews=True")
 Reply_Status(msg,userid,"reply","💢┇تم الغاء تقييده")  
 return false
 end
 if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Addictive(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -3147,6 +3497,12 @@ return false
 end  
 if text and text:match("^طرد @(.*)$") and Addictive(msg) then 
 local username = text:match("^طرد @(.*)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -3183,6 +3539,12 @@ end
 
 if text and text:match("^طرد (%d+)$") and Addictive(msg) then 
 local userid = text:match("^طرد (%d+)$") 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -3208,6 +3570,12 @@ end
 
 if text == "تعطيل الطرد" or text == "تعطيل الحظر" then
 if Constructor(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:set(bot_id.."Ban:Cheking"..msg.chat_id_,"true")
 send(msg.chat_id_, msg.id_, '🔏┇تم تعطيل » الحظر ~ والطرد ')
 return false
@@ -3215,6 +3583,12 @@ end
 end
 if text == "تفعيل الطرد" or text == "تفعيل الحظر" then
 if Constructor(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:del(bot_id.."Ban:Cheking"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '☑┇تم تفعيل » الحظر ~ والطرد ')
 return false
@@ -3222,6 +3596,12 @@ end
 end
 if text == "تعطيل الرفع" or text == "تعطيل الترقيه" then
 if Constructor(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:set(bot_id.."Add:Group:Cheking"..msg.chat_id_,"true")
 send(msg.chat_id_, msg.id_, '🔏┇تم تعطيل رفع » الادمن ~ المميز ')
 return false
@@ -3229,6 +3609,12 @@ end
 end
 if text == "تفعيل الرفع" or text == "تفعيل الترقيه" then
 if Constructor(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:del(bot_id.."Add:Group:Cheking"..msg.chat_id_)
 send(msg.chat_id_, msg.id_, '☑┇تم تفعيل رفع » الادمن ~ المميز ')
 return false
@@ -3286,6 +3672,12 @@ end
 end
 if text == "تفعيل جلب الرابط" or text == 'تفعيل الرابط' then
 if Addictive(msg) then  
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:set(bot_id.."BuShInKi:Link_Group"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"📮┇تم تفعيل جلب الرابط المجموعه") 
 return false  
@@ -3293,6 +3685,12 @@ end
 end
 if text == "تعطيل جلب الرابط" or text == 'تعطيل الرابط' then
 if Addictive(msg) then  
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:del(bot_id.."BuShInKi:Link_Group"..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,"☑┇تم تعطيل جلب رابط المجموعه") 
 return false end
@@ -3442,6 +3840,12 @@ return false  end
 end
 
 if text == "مسح البوتات" and Addictive(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 tdcli_function ({ ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(arg,tah)  
 local admins = tah.members_  
 local x = 0
@@ -3464,6 +3868,12 @@ end
 end,nil)  
 end   
 if text == ("كشف البوتات") and Addictive(msg) then  
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
 text = "\n⛔┇قائمة البوتات الموجوده \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
@@ -3527,6 +3937,12 @@ end
 end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local list = database:smembers(bot_id.."BuShInKi:List:Cmd:Group:New"..msg.chat_id_.."")
 t = "🔰┇قائمه الاوامر المضافه  \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
@@ -3544,6 +3960,12 @@ send(msg.chat_id_, msg.id_,"["..t.."]")
 end
 if text == "حذف الاوامر المضافه" or text == "مسح الاوامر المضافه" then
 if Constructor(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 local list = database:smembers(bot_id.."BuShInKi:List:Cmd:Group:New"..msg.chat_id_)
 for k,v in pairs(list) do
 database:del(bot_id.."BuShInKi:Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
@@ -3553,12 +3975,24 @@ send(msg.chat_id_, msg.id_,"🔰┇تم مسح جميع الاوامر التي 
 end
 end
 if text == "اضف امر" and Constructor(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:set(bot_id.."BuShInKi:Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 send(msg.chat_id_, msg.id_,"🔰┇الان ارسل لي الامر القديم ..")  
 return false
 end
 if text == "حذف امر" or text == "مسح امر" then 
 if Constructor(msg) then
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:set(bot_id.."BuShInKi:Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 send(msg.chat_id_, msg.id_,"🔰┇ارسل الامر الذي قم بوضعه بدلا عن القديم")  
 return false
@@ -3592,6 +4026,12 @@ send(msg.chat_id_, msg.id_,"🔘┇تم مسح الصلاحيات")
 end
 if text and text:match("^اضف صلاحيه (.*)$") and Addictive(msg) then 
 ComdNew = text:match("^اضف صلاحيه (.*)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:set(bot_id.."BuShInKi:Comd:New:rt"..msg.chat_id_..msg.sender_user_id_,ComdNew)  
 database:sadd(bot_id.."BuShInKi:Coomds"..msg.chat_id_,ComdNew)  
 database:setex(bot_id.."BuShInKi:Comd:New"..msg.chat_id_..""..msg.sender_user_id_,200,true)  
@@ -3599,6 +4039,12 @@ send(msg.chat_id_, msg.id_, "🎖┇ارسل نوع الصلاحيه ⚜️\n�
 end
 if text and text:match("^مسح صلاحيه (.*)$") and Addictive(msg) or text and text:match("^حذف صلاحيه (.*)$") and Addictive(msg) then 
 ComdNew = text:match("^مسح صلاحيه (.*)$") or text:match("^حذف صلاحيه (.*)$")
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 database:del(bot_id.."BuShInKi:Comd:New:rt:bot:"..ComdNew..msg.chat_id_)
 send(msg.chat_id_, msg.id_, "☑┇تم مسح الصلاحيه ") 
 end
@@ -5756,7 +6202,7 @@ send(msg.chat_id_, msg.id_,t)
 end
 if text == "متجر الملفات" or text == 'المتجر' then
 if DevBuShInKi(msg) then
-local Get_Files, res = https.request("https://raw.githubusercontent.com/Usebot/Files_BuShInKi/master/getfile.json")
+local Get_Files, res = https.request("https://raw.githubusercontent.com/BuShInKikid/Files_BuShInKi/master/getfile.json")
 if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
@@ -5794,7 +6240,7 @@ t = "*🗂┇ الملف » {"..file.."}\n📬┇ تم تعطيله وحذفه �
 else
 t = "*📬┇ بالتاكيد تم تعطيل وحذف ملف » {"..file.."} \n✓*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/Usebot/Files_BuShInKi/master/Files_BuShInKi/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/BuShInKikid/Files_BuShInKi/master/Files_BuShInKi/"..file)
 if res == 200 then
 os.execute("rm -fr BuShInKi_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
@@ -5814,7 +6260,7 @@ t = "*📬┇ بالتاكيد تم تنزيل وتفعيل ملف » {"..file..
 else
 t = "*🗂┇ الملف » {"..file.."}\n📬┇ تم تنزيله وتفعيله بنجاح \n💥*"
 end
-local json_file, res = https.request("https://raw.githubusercontent.com/Usebot/Files_BuShInKi/master/Files_BuShInKi/"..file)
+local json_file, res = https.request("https://raw.githubusercontent.com/BuShInKikid/Files_BuShInKi/master/Files_BuShInKi/"..file)
 if res == 200 then
 local chek = io.open("BuShInKi_Files/"..file,'w+')
 chek:write(json_file)
@@ -5941,14 +6387,14 @@ Text = [[
 
 🌐┇BuShInKi TEAM 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📊┇ [Source Channel](https://t.me/JUU)
+📊┇ [Source Channel](https://t.me/JJJUU)
 
-📊┇ [Source Info](https://t.me/BuShInK0)
+📊┇ [Source Info](https://t.me/BuShInKi0)
 
-🌐┇ [BuShInKi iNDT](https://t.me/JJUU)
+🌐┇ [BuShInKi iNDT](https://t.me/JJJUU)
  
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-📧┇ [TWS BuShInKi](https://t.me/biyguuyfsgot)
+📧┇ [TWS BuShInKi](https://t.me/Ub55bot)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
@@ -5962,7 +6408,7 @@ Text = [[
 🎖┇م4 ~⪼ لعرض اوامر المنشئين
 👤┇م5 ~⪼ لعرض اوامر المطورين
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @b666pppp
+📡┇CH @b666P
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6000,7 +6446,7 @@ Text = [[
 🔐┇الكلايش
 🔐┇السيلفي
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇Ch ~⪼ @b666pppp
+📡┇Ch ~⪼ @b666P
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6066,7 +6512,7 @@ Text = [[
 📮┇الصلاحيات
 📮┇الرابط
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @b666pppp
+📡┇CH @b666P
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6110,7 +6556,7 @@ Text = [[
 تغير رد المميز + النص
 تغير رد العضو + النص
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @b666pppp
+📡┇CH @b666P
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6135,7 +6581,7 @@ Text = [[
 ➕┇اضف رسائل + العدد بالرد
 ➕┇اضف مجوهرات + العدد بالرد
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @b666pppp
+📡┇CH @b666P
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6181,7 +6627,7 @@ Text = [[
 ➕┇اذاعه بالتثبيت 
 ➕┇الاحصائيات 
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @b666pppp
+📡┇CH @b666P
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6191,6 +6637,12 @@ end ---- Chat_Type = 'GroupBot'
 end ---- Chat_Type = 'GroupBot' 
 
 if text == 'تفعيل' and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'🚸┇البوت ليس ادمن يرجى ترقيتي !') 
 return false  
@@ -6238,6 +6690,12 @@ end,nil)
 end,nil)
 end
 if text == 'تعطيل' and DevBot(msg) then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n??┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if not database:sismember(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_) then
@@ -6274,6 +6732,12 @@ end,nil)
 end,nil) 
 end
 if text == 'تفعيل' and not DevBot(msg) and not database:get(bot_id..'BuShInKi:Free:Add:Bots') then 
+local url,res = http.request('http://teamstorm.tk/chh/?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@b666P]')   
+return false 
+end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'🚸┇البوت ليس ادمن يرجى ترقيتي !') 
 return false  
@@ -6721,7 +7185,6 @@ end
 end --- Chat_Type = 'UserBot' 
 end
 end
-
 function tdcli_update_callback(data)
 if data.ID == "UpdateChannel" then 
 if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
