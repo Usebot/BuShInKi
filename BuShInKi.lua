@@ -6196,7 +6196,7 @@ if text == 'تفعيل' and DevBot(msg) then
 local url,res = http.request('https://ifff.ga/Api/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@iraqapi]')   
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
 return false 
 end
 if msg.can_be_deleted_ == false then 
@@ -6249,7 +6249,7 @@ if text == 'تعطيل' and DevBot(msg) then
 local url,res = http.request('https://ifff.ga/Api/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@iraqapi]')   
+send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
 return false 
 end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
