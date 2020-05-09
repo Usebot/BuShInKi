@@ -6203,7 +6203,7 @@ end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if database:sismember(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,'*❕┇المجموعه مفعله سابقا ~ '..chat.title_..''*)
+send(msg.chat_id_, msg.id_,'*❕┇المجموعه مفعله سابقا ~ '..chat.title_..*'')
 else
 Reply_Status(msg,result.id_,'reply_Add','☑┇تم تفعيل المجموعه ~ '..chat.title_..'')
 database:sadd(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_)
