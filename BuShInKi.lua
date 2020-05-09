@@ -4130,7 +4130,7 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 end
 if text == "تاك للكل" and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request(https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
