@@ -527,7 +527,7 @@ end
 
 function Is_Not_Spam(msg,type)
 if type == "kick" then 
-Reply_Status(msg,msg.sender_user_id_,"reply","📬┇قام بالتكرار هنا وتم طرده")  
+Reply_Status(msg,msg.sender_user_id_,"reply","🚫┇قام بالتكرار هنا وتم طرده")  
 Kick_Group(msg.chat_id_,msg.sender_user_id_) 
 return false  
 end 
@@ -538,11 +538,11 @@ end
 if type == "keed" then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..msg.sender_user_id_.."") 
 database:sadd(bot_id.."BuShInKi:Muted:User"..msg.chat_id_,msg.sender_user_id_) 
-Reply_Status(msg,msg.sender_user_id_,"reply","📬┇قام بالتكرار هنا وتم تقييده")  
+Reply_Status(msg,msg.sender_user_id_,"reply","🚫┇قام بالتكرار هنا وتم تقييده")  
 return false  
 end  
 if type == "mute" then
-Reply_Status(msg,msg.sender_user_id_,"reply","📬┇قام بالتكرار هنا وتم كتمه")  
+Reply_Status(msg,msg.sender_user_id_,"reply","🚫┇قام بالتكرار هنا وتم كتمه")  
 database:sadd(bot_id.."BuShInKi:Muted:User"..msg.chat_id_,msg.sender_user_id_) 
 return false  
 end
@@ -607,7 +607,7 @@ sendSticker(v, 0, msg.content_.sticker_.sticker_.persistent_id_)
 database:set(bot_id..'BuShInKi:Msg:Pin:Chat'..v,msg.content_.sticker_.sticker_.persistent_id_) 
 end 
 end
-send(msg.chat_id_, msg.id_,"📮┇تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
+send(msg.chat_id_, msg.id_,"🔘┇تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
 database:del(bot_id.."BuShInKi:BuShInKi:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end
@@ -1949,7 +1949,7 @@ end
 
 if text == ("مسح قائمه العام") and DevBuShInKi(msg) then
 database:del(bot_id.."BuShInKi:GBan:User")
-send(msg.chat_id_, msg.id_, "\n📮┇تم مسح قائمه العام")
+send(msg.chat_id_, msg.id_, "\n☑┇تم مسح قائمه العام")
 return false
 end
 if text == ("مسح المطورين") and DevBuShInKi(msg) then
@@ -1989,7 +1989,7 @@ send(msg.chat_id_, msg.id_, "\n🚷┇تم مسح المحظورين")
 end
 if text == ("قائمه العام") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:GBan:User")
-t = "\n⛔┇قائمة المحظورين عام \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة المحظورين عام \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2006,7 +2006,7 @@ return false
 end
 if text == ("المطورين") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Sudo:User")
-t = "\n⛔┇قائمة مطورين البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة مطورين البوت \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2022,7 +2022,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == "المنشئين الاساسين" and DevBot(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_)
-t = "\n⛔┇قائمة المنشئين الاساسين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة المنشئين الاساسين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2039,7 +2039,7 @@ return false
 end
 if text == ("المنشئين") and BasicConstructor(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Constructor"..msg.chat_id_)
-t = "\n⛔┇قائمة المنشئين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة المنشئين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2055,7 +2055,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المدراء") and Constructor(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Manager"..msg.chat_id_)
-t = "\n⛔┇قائمة المدراء \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة المدراء \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2071,7 +2071,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("الادمنيه") and Owner(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Mod:User"..msg.chat_id_)
-t = "\n⛔┇قائمة الادمنيه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة الادمنيه \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2087,7 +2087,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المميزين") and Addictive(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Special:User"..msg.chat_id_)
-t = "\n⛔┇قائمة مميزين المجموعه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة مميزين المجموعه \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2103,7 +2103,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المكتومين") and Addictive(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Muted:User"..msg.chat_id_)
-t = "\n🚫┇قائمة المكتومين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n🚫┇قائمة المكتومين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2120,7 +2120,7 @@ end
 
 if text == ("المحظورين") then
 local list = database:smembers(bot_id.."BuShInKi:Ban:User"..msg.chat_id_)
-t = "\n🚫┇قائمة محظورين المجموعه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n🚫┇قائمة محظورين المجموعه \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2365,7 +2365,7 @@ if text == "المنشئين الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
 local list = database:smembers(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_)
-t = "\n⛔┇قائمة المنشئين الاساسين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة المنشئين الاساسين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2720,19 +2720,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
 end
 end,nil)   
 end   
@@ -2746,19 +2746,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
 end
 end,nil)   
 end   
@@ -2772,19 +2772,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
 end
 else
 info = "📌┇المعرف غلط"
@@ -2801,19 +2801,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 end
 else
 info = "📌┇المعرف غلط"
@@ -3392,7 +3392,7 @@ end
 
 if text == "قائمه المنع" and Addictive(msg) then   
 local list = database:smembers(bot_id.."BuShInKi:List:Filter"..msg.chat_id_)  
-t = "\n⛔┇قائمة المنع \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة المنع \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do  
 local BuShInKi_Msg = database:get(bot_id.."BuShInKi:Add:Filter:Rp2"..v..msg.chat_id_)   
 t = t..""..k.."- "..v.." ~⪼ {"..BuShInKi_Msg.."}\n"    
@@ -3468,7 +3468,7 @@ end
 if text == ("كشف البوتات") and Addictive(msg) then  
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
-text = "\n📊┇قائمة البوتات الموجوده \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+text = "\n📊┇قائمة البوتات الموجوده \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 local n = 0
 local t = 0
 for i=0 , #admins do 
@@ -3487,7 +3487,7 @@ send(msg.chat_id_, msg.id_, "🔘┇لا توجد بوتات في المجموع
 return false 
 end
 if #admins == i then 
-local a = "\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n📮┇عدد البوتات التي هنا >> {"..n.."} بوت\n"
+local a = "\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n📮┇عدد البوتات التي هنا >> {"..n.."} بوت\n"
 local f = "🔖┇عدد البوتات التي هي ادمن >> {"..t.."}\n💢┇ملاحضه علامة ال (✯) تعني ان البوت ادمن \n💥"
 send(msg.chat_id_, msg.id_, text..a..f)
 end
@@ -3530,7 +3530,7 @@ end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
 local list = database:smembers(bot_id.."BuShInKi:List:Cmd:Group:New"..msg.chat_id_.."")
-t = "🔰┇قائمه الاوامر المضافه  \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "🔰┇قائمه الاوامر المضافه  \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."BuShInKi:Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 if Cmds then 
@@ -3691,7 +3691,7 @@ send(msg.chat_id_, msg.id_,"??┇تم مسح ردود المدير")
 end
 if text == ("ردود المدير") and Owner(msg) then
 local list = database:smembers(bot_id.."BuShInKi:List:Manager"..msg.chat_id_.."")
-text = "📑┇قائمه ردود المدير \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+text = "📑┇قائمه ردود المدير \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."BuShInKi:Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = "متحركه 🎭"
@@ -3881,7 +3881,7 @@ send(msg.chat_id_, msg.id_,"📌┇تم مسح ردود المطور")
 end
 if text == ("ردود المطور") and DevBuShInKi(msg) then 
 local list = database:smembers(bot_id.."BuShInKi:List:Rd:Sudo")
-text = "\n⛔┇قائمة ردود المطور \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
+text = "\n⛔┇قائمة ردود المطور \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."BuShInKi:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -4482,7 +4482,7 @@ send(msg.chat_id_, msg.id_,"📫┇الاذاعه معطله من قبل الم�
 return false
 end
 database:setex(bot_id.."BuShInKi:BuShInKi:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي سواء ~ { ملصق, متحركه, صوره, رساله }\n📫┇للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي سواء ~ { ملصق, متحركه, صوره, رساله }\n??┇للخروج ارسل الغاء ") 
 return false
 end  
 if text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
@@ -4816,10 +4816,10 @@ end
 Num_Flood = database:hget(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_,"floodmax") or 0
 local text = 
 "*\n🔰┇ااعدادات المجموعه "..
-"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
+"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
 "\n🔏┇علامة ال {✓} تعني مفعل"..
 "\n🔓┇علامة ال {✘} تعني معطل"..
-"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
+"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
 "\n📌┇الروابط ~⪼ "..lock_links..
 "\n".."📌┇المعرفات ~⪼ "..lock_user..
 "\n".."📌┇التاك ~⪼ "..lock_hash..
@@ -4829,7 +4829,7 @@ local text =
 "\n".."📌┇الاشعارات ~⪼ "..lock_tagservr..
 "\n".."📌┇الماركدون ~⪼ "..lock_mark..
 "\n".."📌┇التعديل ~⪼ "..lock_edit..
-"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
+"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
 "\n".."📌┇الكلايش ~⪼ "..lock_spam..
 "\n".."📌┇الكيبورد ~⪼ "..lock_inlin..
 "\n".."📌┇الاغاني ~⪼ "..lock_vico..
@@ -4838,7 +4838,7 @@ local text =
 "\n".."📌┇الدردشه ~⪼ "..lock_text..
 "\n".."📌┇الفيديو ~⪼ "..lock_ved..
 "\n".."📌┇الصور ~⪼ "..lock_photo..
-"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
+"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
 "\n".."📌┇الصوت ~⪼ "..lock_muse..
 "\n".."📌┇الملصقات ~⪼ "..lock_ste..
 "\n".."📌┇الجهات ~⪼ "..lock_phon..
@@ -5424,7 +5424,7 @@ end
 if text == 'الالعاب' then
 Teext = [[
 📛┇قائمه الالعاب الموجوده
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ 
 ☑┇لعبة البات ~⪼ بات
 ☑┇لعبة التخمين ~⪼ خمن
 ☑┇لعبه الاسرع ~⪼ الاسرع
@@ -5434,7 +5434,7 @@ Teext = [[
 ☑┇لعبة العكس ~⪼ العكس 
 ☑┇لعبة الحزوره ~⪼ حزوره
 ☑┇لعبة المعاني ~⪼ معاني
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ 
 📌┇مجوهراتي ~⪼ لعرض عدد الارباح
 🎁┇بيع مجوهراتي + العدد ~⪼ لستبدال كل مجوهره ب50 رساله
 ]]
@@ -5746,7 +5746,7 @@ end,nil)
 end
 end
 if text == 'الملفات' and DevBuShInKi(msg) then
-t = '☑┇جميع الملفات : \n ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n'
+t = '🗂┇جميع الملفات : \n ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n'
 i = 0
 for v in io.popen('ls BuShInKi_Files'):lines() do
 if v:match(".lua$") then
@@ -5763,8 +5763,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n📂┇اهلا بك في متجر ملفات BuShInKi \n📮┇الملفات الموجوده حاليا \nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n\n"
-local TextE = "\nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n📌┇تدل علامة (✔) الملف مفعل\n".."📌┇تدل علامة (✖) الملف معطل\n"
+local TextS = "\n🗂┇اهلا بك في متجر ملفات BuShInKi \n📮┇الملفات الموجوده حاليا \nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n\n"
+local TextE = "\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n📌┇تدل علامة (✔) الملف مفعل\n".."📌┇تدل علامة (✖) الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("BuShInKi_Files/"..name,"r")
@@ -5780,7 +5780,7 @@ end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
 else
-send(msg.chat_id_, msg.id_,"📮┇ لا يوجد اتصال من ال api \n") 
+send(msg.chat_id_, msg.id_,"⚠┇ لا يوجد اتصال من ال api \n") 
 end
 return false
 end
@@ -5792,7 +5792,7 @@ local file = name_t[2]..'.lua'
 local file_bot = io.open("BuShInKi_Files/"..file,"r")
 if file_bot then
 io.close(file_bot)
-t = "*🗂┇ الملف ~⪼ {"..file.."}\n📬┇ تم تعطيله وحذفه بنجاح \n✓*"
+t = "*🗂┇ الملف ~⪼ {"..file.."}\n☑┇تم تعطيله وحذفه بنجاح \n✓*"
 else
 t = "*📬┇ بالتاكيد تم تعطيل وحذف ملف ~⪼ {"..file.."} \n✓*"
 end
@@ -5802,7 +5802,7 @@ os.execute("rm -fr BuShInKi_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('BuShInKi.lua')  
 else
-send(msg.chat_id_, msg.id_,"*📮┇ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
+send(msg.chat_id_, msg.id_,"*⚠┇ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
 return false
 end
@@ -5814,7 +5814,7 @@ if file_bot then
 io.close(file_bot)
 t = "*📬┇ بالتاكيد تم تنزيل وتفعيل ملف ~⪼ {"..file.."} \n✓*"
 else
-t = "*🗂┇ الملف ~⪼ {"..file.."}\n📬┇ تم تنزيله وتفعيله بنجاح \n💥*"
+t = "*🗂┇ الملف ~⪼ {"..file.."}\n☐┇ تم تنزيله وتفعيله بنجاح \n💥*"
 end
 local json_file, res = https.request("https://raw.githubusercontent.com/Usebot/Files_BuShInKi/master/Files_BuShInKi/"..file)
 if res == 200 then
@@ -5839,7 +5839,7 @@ send(msg.chat_id_, msg.id_,'☑┇ تم حذف كليشه المطور')
 end
 if text == 'وضع كليشه المطور' and DevBuShInKi(msg) then
 database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_,true)
-send(msg.chat_id_,msg.id_,'📫┇ ارسل الكليشه الان')
+send(msg.chat_id_,msg.id_,'📥┇ ارسل الكليشه الان')
 return false
 end
 if text and database:get(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_) then
@@ -5942,7 +5942,7 @@ Text = [[
 🔰 Welcome to Source 🔰
 
 🌐┇BuShInKi TEAM 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 📊┇ [Source Channel](https://t.me/BuShInKi)
 
 📊┇ [Source Info](https://t.me/BuShInKix)
@@ -5962,7 +5962,7 @@ Text = [[
 🎖┇م4 ~⪼ لعرض اوامر المنشئين
 👤┇م5 ~⪼ لعرض اوامر المطورين
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @U5UUUU
+📡┇CH @Bushniki
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -5970,10 +5970,10 @@ end
 if text == 'م1' and Addictive(msg) then
 Text = [[
 📮┇ اوامر حمايه المجموعه
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 ⏺┇قفل/فتح + الاوامر الادناه 
 ⏺┇قفل/فتح + الامر بالتقيد • بالطرد • بالكتم
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 🔐┇الروابط
 🔐┇المعرف
 🔐┇التاك
@@ -5999,8 +5999,8 @@ Text = [[
 🔐┇التكرار
 🔐┇الكلايش
 🔐┇السيلفي
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇Ch ~⪼ @U5UUUU
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+📡┇Ch ~⪼ @Bushniki
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6008,7 +6008,7 @@ end
 if text == 'م2' and Addictive(msg) then
 Text = [[
 🥈┇اوامر الادمنيه
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 ▶️┇رفع/تنزيل مميز
 📮┇تاك للكل
 📮┇عدد الكروب
@@ -6043,18 +6043,18 @@ Text = [[
 💭┇سحكاتي
 💭┇رسائلي
 💭┇كشف البوتات
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 🔘┇وضع + الاوامر الادناه
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 📝┇اسم
 📝┇رابط
 📝┇صوره
 📝┇وصف
 📝┇قوانين
 📝┇ترحيب
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 🗑┇مسح + الاوامر الادناه
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 📮┇قائمه المنع
 📮┇المحظورين
 📮┇المميزين
@@ -6065,8 +6065,8 @@ Text = [[
 📮┇الصوره
 📮┇الصلاحيات
 📮┇الرابط
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @U5UUUU
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+📡┇CH @Bushniki
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6074,7 +6074,7 @@ end
 if text == 'م3' and Owner(msg) then
 Text = [[
 🥇┇ اوامر المدراء
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 ↕️┇رفع/تنزيل ادمن
 ↕️┇رفع/كشف القيود
 ↕️┇تنزيل الكل
@@ -6100,7 +6100,7 @@ Text = [[
 🗑┇تنظيف + عدد
 🗑┇مسح الادمنيه
 🗑┇مسح ردود المدير
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 🔘┇لتغير ردود الايدي :- 
 تغير رد المطور + النص
 تغير رد المنشئ الاساسي + النص
@@ -6109,8 +6109,8 @@ Text = [[
 تغير رد الادمن + النص
 تغير رد المميز + النص
 تغير رد العضو + النص
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @U5UUUU
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+📡┇CH @Bushniki
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6118,13 +6118,13 @@ end
 if text == 'م4' and Constructor(msg) then
 Text = [[
 🏅┇اوامر المنشئين الاساسين 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 ↕️┇رفع/تنزيل منشئ
 ↕️┇المنشئين
 🗑┇مسح المنشئين
 
 🏅┇اوامر المنشئين
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 ↕️┇رفع/تنزيل مدير
 ↕️┇المدراء
 🗑┇مسح المدراء
@@ -6134,8 +6134,8 @@ Text = [[
 ➕┇حذف/مسح الاوامر المضافه
 ➕┇اضف رسائل + العدد بالرد
 ➕┇اضف مجوهرات + العدد بالرد
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @U5UUUU
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+📡┇CH @Bushniki
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6143,7 +6143,7 @@ end
 if text == 'م5' and DevBot(msg) then
 Text = [[
 👁‍🗨┇اوامر المطور الاساسي  
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 ↕️┇حظر عام
 ↕️┇الغاء العام
 🗑┇مسح قائمه العام
@@ -6166,7 +6166,7 @@ Text = [[
 🗑┇مسح جميع الملفات 
 📄┇المتجر 
 🏅┇اوامر المطور 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
 👁‍🗨┇تفعيل /تعطيل
 
 ↕️┇رفع/تنزيل منشئ اساسي
@@ -6180,8 +6180,8 @@ Text = [[
 ➕┇اذاعه خاص 
 ➕┇اذاعه بالتثبيت 
 ➕┇الاحصائيات 
-┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @U5UUUU
+ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+📡┇CH @Bushniki
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6203,7 +6203,7 @@ end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if database:sismember(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,'❕┇المجموعه مفعله سابقا ~ '..chat.title_..'')
+send(msg.chat_id_, msg.id_,'*❕┇المجموعه مفعله سابقا ~ '..chat.title_..''*)
 else
 Reply_Status(msg,result.id_,'reply_Add','☑┇تم تفعيل المجموعه ~ '..chat.title_..'')
 database:sadd(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_)
@@ -6597,16 +6597,16 @@ send(msg.chat_id_, msg.id_,'🔘┇تم حذف كليشه ستارت')
 end
 if text == ("مسح قائمه العام 📮") and DevBuShInKi(msg) then
 database:del(bot_id.."BuShInKi:GBan:User")
-send(msg.chat_id_, msg.id_, "\n📮┇تم مسح قائمه العام")
+send(msg.chat_id_, msg.id_, "\n☑┇تم مسح قائمه العام")
 return false
 end
 if text == ("مسح المطورين 🚸") and DevBuShInKi(msg) then
 database:del(bot_id.."BuShInKi:Sudo:User")
-send(msg.chat_id_, msg.id_, "\n📮┇ تم مسح قائمة المطورين  ")
+send(msg.chat_id_, msg.id_, "\n☐┇ تم مسح قائمة المطورين")
 end
 if text == ("قائمه العام 🚷") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:GBan:User")
-t = "\n⛔┇قائمة المحظورين عام \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n⛔┇قائمة المحظورين عام \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -6623,7 +6623,7 @@ return false
 end
 if text == ("المطورين 🔱") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Sudo:User")
-t = "\n⛔┇قائمة مطورين البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+t = "\n👨🏿‍💻 ┇قائمة مطورين البوت \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -6930,9 +6930,9 @@ local Text = result.content_.text_
 if database:get(bot_id.."BuShInKi:Lock:edit"..msg.chat_id_) and not Text and not BasicConstructor(result) then
 local list = database:smembers(bot_id.."BuShInKi:Constructor"..msg.chat_id_)
 if #list == 0 then
-Reply_Status(result,result.sender_user_id_,"reply","📬┇قام بالتعديل على الميديا")  
+Reply_Status(result,result.sender_user_id_,"reply","⚠┇قام بالتعديل على الميديا")  
 else
-tt = "\n⛔┇يا منشئين\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
+tt = "\n⛔┇يا منشئين\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
