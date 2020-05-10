@@ -527,7 +527,7 @@ end
 
 function Is_Not_Spam(msg,type)
 if type == "kick" then 
-Reply_Status(msg,msg.sender_user_id_,"reply","🚫┇قام بالتكرار هنا وتم طرده")  
+Reply_Status(msg,msg.sender_user_id_,"reply","📬┇قام بالتكرار هنا وتم طرده")  
 Kick_Group(msg.chat_id_,msg.sender_user_id_) 
 return false  
 end 
@@ -538,11 +538,11 @@ end
 if type == "keed" then
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" ..msg.chat_id_.. "&user_id=" ..msg.sender_user_id_.."") 
 database:sadd(bot_id.."BuShInKi:Muted:User"..msg.chat_id_,msg.sender_user_id_) 
-Reply_Status(msg,msg.sender_user_id_,"reply","🚫┇قام بالتكرار هنا وتم تقييده")  
+Reply_Status(msg,msg.sender_user_id_,"reply","📬┇قام بالتكرار هنا وتم تقييده")  
 return false  
 end  
 if type == "mute" then
-Reply_Status(msg,msg.sender_user_id_,"reply","🚫┇قام بالتكرار هنا وتم كتمه")  
+Reply_Status(msg,msg.sender_user_id_,"reply","📬┇قام بالتكرار هنا وتم كتمه")  
 database:sadd(bot_id.."BuShInKi:Muted:User"..msg.chat_id_,msg.sender_user_id_) 
 return false  
 end
@@ -576,7 +576,7 @@ end
 end
 if database:get(bot_id.."BuShInKi:BuShInKi:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء الاذاعه") 
 database:del(bot_id.."BuShInKi:BuShInKi:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -607,7 +607,7 @@ sendSticker(v, 0, msg.content_.sticker_.sticker_.persistent_id_)
 database:set(bot_id..'BuShInKi:Msg:Pin:Chat'..v,msg.content_.sticker_.sticker_.persistent_id_) 
 end 
 end
-send(msg.chat_id_, msg.id_,"🔘┇تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
+send(msg.chat_id_, msg.id_,"📮┇تمت الاذاعه الى *~ "..#list.." ~* مجموعه ")     
 database:del(bot_id.."BuShInKi:BuShInKi:Bc:Grops:Pin" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end
@@ -1121,7 +1121,7 @@ end
 --------------------------------------------------------------------------------------------------------------
 if database:get(bot_id.."BuShInKi:Set:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then  
 if text == "الغاء" then 
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء وضع الوصف") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء وضع الوصف") 
 database:del(bot_id.."BuShInKi:Set:Description" .. msg.chat_id_ .. "" .. msg.sender_user_id_)
 return false  
 end 
@@ -1133,7 +1133,7 @@ end
 --------------------------------------------------------------------------------------------------------------
 if database:get(bot_id.."BuShInKi:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_) then 
 if text == "الغاء" then 
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء حفظ الترحيب") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء حفظ الترحيب") 
 database:del(bot_id.."BuShInKi:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_)  
 return false  
 end 
@@ -1160,7 +1160,7 @@ end
 
 if database:get(bot_id.."BuShInKi:BuShInKi:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء الاذاعه للخاص") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء الاذاعه للخاص") 
 database:del(bot_id.."BuShInKi:BuShInKi:Bc:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -1194,7 +1194,7 @@ end
 
 if database:get(bot_id.."BuShInKi:BuShInKi:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء الاذاعه") 
 database:del(bot_id.."BuShInKi:BuShInKi:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false
 end 
@@ -1228,7 +1228,7 @@ end
 
 if database:get(bot_id.."BuShInKi:BuShInKi:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء الاذاعه") 
 database:del(bot_id.."BuShInKi:BuShInKi:Fwd:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -1249,7 +1249,7 @@ return false
 end
 if database:get(bot_id.."BuShInKi:BuShInKi:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" or text == "الغاء ✖" then   
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء الاذاعه") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء الاذاعه") 
 database:del(bot_id.."BuShInKi:BuShInKi:Fwd:Pv" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) 
 return false  
 end 
@@ -1309,49 +1309,49 @@ if Chat_Type == 'GroupBot' then
 if ChekAdd(msg.chat_id_) == true then
 if text == "قفل الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
 database:set(bot_id.."BuShInKi:Lock:text"..msg.chat_id_,true) 
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الدردشه")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الدردشه")  
 return false
 end 
 if text == "قفل الاضافه" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:set(bot_id.."BuShInKi:Lock:AddMempar"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل اضافة الاعضاء")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل اضافة الاعضاء")  
 return false
 end 
 if text == "قفل الدخول" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:set(bot_id.."BuShInKi:Lock:Join"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل دخول الاعضاء")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل دخول الاعضاء")  
 return false
 end 
 if text == "قفل البوتات" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:set(bot_id.."BuShInKi:Lock:Bot:kick"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل البوتات")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل البوتات")  
 return false
 end 
 if text == "قفل البوتات بالطرد" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:set(bot_id.."BuShInKi:Lock:Bot:kick"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل البوتات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل البوتات")  
 return false
 end 
 if text == "قفل الاشعارات" and msg.reply_to_message_id_ == 0 and Addictive(msg) then  
 database:set(bot_id.."BuShInKi:Lock:tagservr"..msg.chat_id_,true)  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الاشعارات")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الاشعارات")  
 return false
 end 
 if text == "قفل التثبيت" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 database:set(bot_id.."BuShInKi:lockpin"..msg.chat_id_, true) 
 database:sadd(bot_id.."BuShInKi:Lock:pin",msg.chat_id_) 
 tdcli_function ({ ID = "GetChannelFull",  channel_id_ = msg.chat_id_:gsub("-100","") }, function(arg,data)  database:set(bot_id.."BuShInKi:Pin:Id:Msg"..msg.chat_id_,data.pinned_message_id_)  end,nil)
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل التثبيت هنا")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل التثبيت هنا")  
 return false
 end 
 if text == "قفل التعديل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 database:set(bot_id.."BuShInKi:Lock:edit"..msg.chat_id_,true) 
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل تعديل")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل تعديل")  
 return false
 end 
 if text == "قفل تعديل الميديا" and msg.reply_to_message_id_ == 0 and Constructor(msg) then 
 database:set(bot_id.."BuShInKi:Lock:edit"..msg.chat_id_,true) 
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل تعديل")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل تعديل")  
 return false
 end 
 if text == "قفل الكل" and msg.reply_to_message_id_ == 0 and Constructor(msg) then  
@@ -1360,23 +1360,23 @@ list ={"Lock:Bot:kick","Lock:User:Name","Lock:hashtak","Lock:Cmd","Lock:Link","L
 for i,lock in pairs(list) do 
 database:set(bot_id..'BuShInKi:'..lock..msg.chat_id_,"del")    
 end
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل جميع الاوامر")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل جميع الاوامر")  
 return false
 end 
 --------------------------------------------------------------------------------------------------------------
 if text == "فتح الاضافه" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:del(bot_id.."BuShInKi:Lock:AddMempar"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح اضافة الاعضاء")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح اضافة الاعضاء")  
 return false
 end 
 if text == "فتح الدردشه" and msg.reply_to_message_id_ == 0 and Owner(msg) then 
 database:del(bot_id.."BuShInKi:Lock:text"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الدردشه")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الدردشه")  
 return false
 end 
 if text == "فتح الدخول" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
 database:del(bot_id.."BuShInKi:Lock:Join"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح دخول الاعضاء")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح دخول الاعضاء")  
 return false
 end 
 if text == "فتح البوتات" and msg.reply_to_message_id_ == 0 and Addictive(msg) then 
@@ -1422,92 +1422,92 @@ end
 --------------------------------------------------------------------------------------------------------------
 if text == "قفل الروابط" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Link"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الروابط")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الروابط")  
 return false
 end 
 if text == "قفل الروابط بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Link"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الروابط")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الروابط")  
 return false
 end 
 if text == "قفل الروابط بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Link"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الروابط")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الروابط")  
 return false
 end 
 if text == "قفل الروابط بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Link"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الروابط")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الروابط")  
 return false
 end 
 if text == "فتح الروابط" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Link"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الروابط")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الروابط")  
 return false
 end 
 if text == "قفل المعرفات" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:User:Name"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل المعرفات")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل المعرفات")  
 return false
 end 
 if text == "قفل المعرفات بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:User:Name"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل المعرفات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل المعرفات")  
 return false
 end 
 if text == "قفل المعرفات بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:User:Name"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل المعرفات")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل المعرفات")  
 return false
 end 
 if text == "قفل المعرفات بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:User:Name"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل المعرفات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل المعرفات")  
 return false
 end 
 if text == "فتح المعرفات" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:User:Name"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح المعرفات")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح المعرفات")  
 return false
 end 
 if text == "قفل التاك" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:hashtak"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل التاك")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل التاك")  
 return false
 end 
 if text == "قفل التاك بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:hashtak"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل التاك")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل التاك")  
 return false
 end 
 if text == "قفل التاك بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:hashtak"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل التاك")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل التاك")  
 return false
 end 
 if text == "قفل التاك بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:hashtak"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل التاك")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل التاك")  
 return false
 end 
 if text == "فتح التاك" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:hashtak"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح التاك")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح التاك")  
 return false
 end 
 if text == "قفل الشارحه" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Cmd"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الشارحه")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الشارحه")  
 return false
 end 
 if text == "قفل الشارحه بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Cmd"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الشارحه")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الشارحه")  
 return false
 end 
 if text == "قفل الشارحه بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Cmd"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الشارحه")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الشارحه")  
 return false
 end 
 if text == "قفل الشارحه بالطرد" and Addictive(msg) then
@@ -1517,439 +1517,439 @@ return false
 end 
 if text == "فتح الشارحه" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Cmd"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الشارحه")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الشارحه")  
 return false
 end 
 if text == "قفل الصور"and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Photo"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الصور")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الصور")  
 return false
 end 
 if text == "قفل الصور بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Photo"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الصور")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الصور")  
 return false
 end 
 if text == "قفل الصور بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Photo"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الصور")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الصور")  
 return false
 end 
 if text == "قفل الصور بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Photo"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الصور")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الصور")  
 return false
 end 
 if text == "فتح الصور" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Photo"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الصور")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الصور")  
 return false
 end 
 if text == "قفل الفيديو" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Video"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الفيديو")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الفيديو")  
 return false
 end 
 if text == "قفل الفيديو بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Video"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الفيديو")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الفيديو")  
 return false
 end 
 if text == "قفل الفيديو بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Video"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الفيديو")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الفيديو")  
 return false
 end 
 if text == "قفل الفيديو بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Video"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الفيديو")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الفيديو")  
 return false
 end 
 if text == "فتح الفيديو" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Video"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الفيديو")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الفيديو")  
 return false
 end 
 if text == "قفل المتحركه" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Animation"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل المتحركه")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل المتحركه")  
 return false
 end 
 if text == "قفل المتحركه بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Animation"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل المتحركه")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل المتحركه")  
 return false
 end 
 if text == "قفل المتحركه بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Animation"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل المتحركه")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل المتحركه")  
 return false
 end 
 if text == "قفل المتحركه بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Animation"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل المتحركه")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل المتحركه")  
 return false
 end 
 if text == "فتح المتحركه" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Animation"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح المتحركه")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح المتحركه")  
 return false
 end 
 if text == "قفل الالعاب" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:geam"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الالعاب")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الالعاب")  
 return false
 end 
 if text == "قفل الالعاب بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:geam"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الالعاب")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الالعاب")  
 return false
 end 
 if text == "قفل الالعاب بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:geam"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الالعاب")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الالعاب")  
 return false
 end 
 if text == "قفل الالعاب بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:geam"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الالعاب")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الالعاب")  
 return false
 end 
 if text == "فتح الالعاب" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:geam"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الالعاب")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الالعاب")  
 return false
 end 
 if text == "قفل الاغاني" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Audio"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الاغاني")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الاغاني")  
 return false
 end 
 if text == "قفل الاغاني بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Audio"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الاغاني")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الاغاني")  
 return false
 end 
 if text == "قفل الاغاني بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Audio"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الاغاني")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الاغاني")  
 return false
 end 
 if text == "قفل الاغاني بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Audio"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الاغاني")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الاغاني")  
 return false
 end 
 if text == "فتح الاغاني" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Audio"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الاغاني")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الاغاني")  
 return false
 end 
 if text == "قفل الصوت" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:vico"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الصوت")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الصوت")  
 return false
 end 
 if text == "قفل الصوت بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:vico"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الصوت")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الصوت")  
 return false
 end 
 if text == "قفل الصوت بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:vico"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الصوت")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الصوت")  
 return false
 end 
 if text == "قفل الصوت بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:vico"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الصوت")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الصوت")  
 return false
 end 
 if text == "فتح الصوت" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:vico"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الصوت")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الصوت")  
 return false
 end 
 if text == "قفل الكيبورد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Keyboard"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الكيبورد")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الكيبورد")  
 return false
 end 
 if text == "قفل الكيبورد بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Keyboard"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الكيبورد")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الكيبورد")  
 return false
 end 
 if text == "قفل الكيبورد بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Keyboard"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الكيبورد")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الكيبورد")  
 return false
 end 
 if text == "قفل الكيبورد بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Keyboard"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الكيبورد")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الكيبورد")  
 return false
 end 
 if text == "فتح الكيبورد" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Keyboard"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الكيبورد")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الكيبورد")  
 return false
 end 
 if text == "قفل الملصقات" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Sticker"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الملصقات")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الملصقات")  
 return false
 end 
 if text == "قفل الملصقات بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Sticker"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الملصقات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الملصقات")  
 return false
 end 
 if text == "قفل الملصقات بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Sticker"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الملصقات")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الملصقات")  
 return false
 end 
 if text == "قفل الملصقات بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Sticker"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الملصقات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الملصقات")  
 return false
 end 
 if text == "فتح الملصقات" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Sticker"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الملصقات")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الملصقات")  
 return false
 end 
 if text == "قفل التوجيه" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:forward"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل التوجيه")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل التوجيه")  
 return false
 end 
 if text == "قفل التوجيه بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:forward"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل التوجيه")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل التوجيه")  
 return false
 end 
 if text == "قفل التوجيه بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:forward"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل التوجيه")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل التوجيه")  
 return false
 end 
 if text == "قفل التوجيه بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:forward"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل التوجيه")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل التوجيه")  
 return false
 end 
 if text == "فتح التوجيه" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:forward"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح التوجيه")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح التوجيه")  
 return false
 end 
 if text == "قفل الملفات" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Document"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الملفات")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الملفات")  
 return false
 end 
 if text == "قفل الملفات بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Document"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الملفات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الملفات")  
 return false
 end 
 if text == "قفل الملفات بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Document"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الملفات")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الملفات")  
 return false
 end 
 if text == "قفل الملفات بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Document"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الملفات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الملفات")  
 return false
 end 
 if text == "فتح الملفات" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Document"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الملفات")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الملفات")  
 return false
 end 
 if text == "قفل السيلفي" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Unsupported"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل السيلفي")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل السيلفي")  
 return false
 end 
 if text == "قفل السيلفي بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Unsupported"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل السيلفي")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل السيلفي")  
 return false
 end 
 if text == "قفل السيلفي بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Unsupported"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل السيلفي")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل السيلفي")  
 return false
 end 
 if text == "قفل السيلفي بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Unsupported"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل السيلفي")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل السيلفي")  
 return false
 end 
 if text == "قفل الفشار" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Fshar"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الفشار")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الفشار")  
 return false
 end 
 if text == "فتح الفشار" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Fshar"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"lock","⚠️┇تم فتح الفشار")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم فتح الفشار")  
 return false
 end 
 if text == "قفل الفشار بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Fshar"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الفشار")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الفشار")  
 return false
 end 
 if text == "قفل الفشار بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Fshar"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الفشار")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الفشار")  
 return false
 end 
 if text == "قفل الفشار بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Fshar"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الفشار")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الفشار")  
 return false
 end 
 
 if text == "فتح السيلفي" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Unsupported"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح السيلفي")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح السيلفي")  
 return false
 end 
 if text == "قفل الماركداون" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Markdaun"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الماركداون")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الماركداون")  
 return false
 end 
 if text == "قفل الماركداون بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Markdaun"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الماركداون")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الماركداون")  
 return false
 end 
 if text == "قفل الماركداون بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Markdaun"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الماركداون")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الماركداون")  
 return false
 end 
 if text == "قفل الماركداون بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Markdaun"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الماركداون")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الماركداون")  
 return false
 end 
 if text == "فتح الماركداون" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Markdaun"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الماركداون")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الماركداون")  
 return false
 end 
 if text == "قفل الجهات" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Contact"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الجهات")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الجهات")  
 return false
 end 
 if text == "قفل الجهات بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Contact"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الجهات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الجهات")  
 return false
 end 
 if text == "قفل الجهات بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Contact"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الجهات")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الجهات")  
 return false
 end 
 if text == "قفل الجهات بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Contact"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الجهات")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الجهات")  
 return false
 end 
 if text == "فتح الجهات" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Contact"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الجهات")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الجهات")  
 return false
 end 
 if text == "قفل الكلايش" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Spam"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الكلايش")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الكلايش")  
 return false
 end 
 if text == "قفل الكلايش بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Spam"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الكلايش")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الكلايش")  
 return false
 end 
 if text == "قفل الكلايش بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Spam"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الكلايش")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الكلايش")  
 return false
 end 
 if text == "قفل الكلايش بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Spam"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الكلايش")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الكلايش")  
 return false
 end 
 if text == "فتح الكلايش" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Spam"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الكلايش")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الكلايش")  
 return false
 end 
 if text == "قفل الانلاين" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Inlen"..msg.chat_id_,"del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐┇تم قفـل الانلاين")  
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفـل الانلاين")  
 return false
 end 
 if text == "قفل الانلاين بالتقيد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Inlen"..msg.chat_id_,"ked")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐┇تم قفـل الانلاين")  
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفـل الانلاين")  
 return false
 end 
 if text == "قفل الانلاين بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Inlen"..msg.chat_id_,"ktm")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐┇تم قفـل الانلاين")  
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفـل الانلاين")  
 return false
 end 
 if text == "قفل الانلاين بالطرد" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Inlen"..msg.chat_id_,"kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐┇تم قفـل الانلاين")  
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفـل الانلاين")  
 return false
 end 
 if text == "فتح الانلاين" and Addictive(msg) then
 database:del(bot_id.."BuShInKi:Lock:Inlen"..msg.chat_id_)  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح الانلاين")  
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح الانلاين")  
 return false
 end 
 if text == "قفل التكرار بالطرد" and Addictive(msg) then 
 database:hset(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_ ,"flood","kick")  
-Reply_Status(msg,msg.sender_user_id_,"lockkick","🔐️┇تم قفل التكرار")
+Reply_Status(msg,msg.sender_user_id_,"lockkick","💢️┇تم قفل التكرار")
 return false
 end 
 if text == "قفل التكرار" and Addictive(msg) then 
 database:hset(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_ ,"flood","del")  
-Reply_Status(msg,msg.sender_user_id_,"lock","🔐️┇تم قفل التكرار بالحذف")
+Reply_Status(msg,msg.sender_user_id_,"lock","💢️┇تم قفل التكرار بالحذف")
 return false
 end 
 if text == "قفل التكرار بالتقيد" and Addictive(msg) then 
 database:hset(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_ ,"flood","keed")  
-Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐️┇تم قفل التكرار")
+Reply_Status(msg,msg.sender_user_id_,"lockkid","💢️┇تم قفل التكرار")
 return false
 end 
 if text == "قفل التكرار بالكتم" and Addictive(msg) then 
 database:hset(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_ ,"flood","mute")  
-Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐️┇تم قفل التكرار")
+Reply_Status(msg,msg.sender_user_id_,"lockktm","💢️┇تم قفل التكرار")
 return false
 end 
 if text == "فتح التكرار" and Addictive(msg) then 
 database:hdel(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_ ,"flood")  
-Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️┇تم فتح التكرار")
+Reply_Status(msg,msg.sender_user_id_,"unlock","💢️┇تم فتح التكرار")
 return false
 end 
 
 if text == ("مسح قائمه العام") and DevBuShInKi(msg) then
 database:del(bot_id.."BuShInKi:GBan:User")
-send(msg.chat_id_, msg.id_, "\n☑┇تم مسح قائمه العام")
+send(msg.chat_id_, msg.id_, "\n📮┇تم مسح قائمه العام")
 return false
 end
 if text == ("مسح المطورين") and DevBuShInKi(msg) then
@@ -1989,7 +1989,7 @@ send(msg.chat_id_, msg.id_, "\n🚷┇تم مسح المحظورين")
 end
 if text == ("قائمه العام") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:GBan:User")
-t = "\n⛔┇قائمة المحظورين عام \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة المحظورين عام \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2006,7 +2006,7 @@ return false
 end
 if text == ("المطورين") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Sudo:User")
-t = "\n👨🏽‍💻┇قائمة مطورين البوت \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة مطورين البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2022,7 +2022,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == "المنشئين الاساسين" and DevBot(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_)
-t = "\n👨🏽‍🎓┇قائمة المنشئين الاساسين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة المنشئين الاساسين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2039,7 +2039,7 @@ return false
 end
 if text == ("المنشئين") and BasicConstructor(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Constructor"..msg.chat_id_)
-t = "\n🕵🏽‍♂️┇قائمة المنشئين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة المنشئين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2055,7 +2055,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المدراء") and Constructor(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Manager"..msg.chat_id_)
-t = "\n👷🏼‍♂️┇قائمة المدراء \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة المدراء \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2071,7 +2071,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 if text == ("الادمنيه") and Owner(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Mod:User"..msg.chat_id_)
-t = "\n👨🏼‍🚒┇قائمة الادمنيه \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة الادمنيه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2081,13 +2081,13 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "❗️┇ لا يوجد ادمنية"
+t = "✖┇لا يوجد ادمنيه"
 end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المميزين") and Addictive(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Special:User"..msg.chat_id_)
-t = "\n🤵🏽┇قائمة مميزين المجموعه \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة مميزين المجموعه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2097,13 +2097,13 @@ t = t..""..k.."- (`"..v.."`)\n"
 end
 end
 if #list == 0 then
-t = "❗️┇لا يوجد اعضاء مميزين"
+t = "✖┇لا يوجد مميزين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
 if text == ("المكتومين") and Addictive(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Muted:User"..msg.chat_id_)
-t = "\n🚫┇قائمة المكتومين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n🚫┇قائمة المكتومين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2120,7 +2120,7 @@ end
 
 if text == ("المحظورين") then
 local list = database:smembers(bot_id.."BuShInKi:Ban:User"..msg.chat_id_)
-t = "\n🚫┇قائمة محظورين المجموعه \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة محظورين المجموعه \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2136,12 +2136,6 @@ send(msg.chat_id_, msg.id_, t)
 end
 
 if text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBuShInKi(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 function Function_BuShInKi(extra, result, success)
 if result.sender_user_id_ == tonumber(SUDO) then
 send(msg.chat_id_, msg.id_, "📮┇لا يمكنك حظر المطور الاساسي \n")
@@ -2153,7 +2147,7 @@ return false
 end
 database:sadd(bot_id.."BuShInKi:GBan:User", result.sender_user_id_)
 Kick_Group(result.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🚫┇تم حظره من مجموعات البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","☑┇تم حظره عام من المجموعات")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2175,7 +2169,7 @@ send(msg.chat_id_, msg.id_, "📮┇لا يمكنك حظر المطور الاس
 return false 
 end
 database:sadd(bot_id.."BuShInKi:GBan:User", result.id_)
-Reply_Status(msg,result.id_,"reply","🚫┇تم حظره من مجموعات البوت")  
+Reply_Status(msg,result.id_,"reply","☑┇تم حظره عام من المجموعات")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2194,13 +2188,13 @@ send(msg.chat_id_, msg.id_, "💢┇لا تسطيع حظر البوت عام")
 return false 
 end
 database:sadd(bot_id.."BuShInKi:GBan:User", userid)
-Reply_Status(msg,userid,"reply","🚫┇تم حظره من مجموعات البوت")  
+Reply_Status(msg,userid,"reply","☑┇تم حظره عام من المجموعات")  
 return false
 end
 if text == ("الغاء العام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBuShInKi(msg) then
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:GBan:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🚫┇تم الغاء حظره من مجموعات البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم الغاء حظره عام من المجموعات")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2209,7 +2203,7 @@ if text and text:match("^الغاء العام @(.*)$") and DevBuShInKi(msg) the
 local username = text:match("^الغاء العام @(.*)$") 
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
-Reply_Status(msg,result.id_,"reply","🚫┇تم الغاء حظره من مجموعات البوت")  
+Reply_Status(msg,result.id_,"reply","💢┇تم الغاء حظره عام من المجموعات")  
 database:srem(bot_id.."BuShInKi:GBan:User", result.id_)
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
@@ -2221,26 +2215,20 @@ end
 if text and text:match("^الغاء العام (%d+)$") and DevBuShInKi(msg) then
 local userid = text:match("^الغاء العام (%d+)$")
 database:srem(bot_id.."BuShInKi:GBan:User", userid)
-Reply_Status(msg,userid,"reply","🚫┇تم الغاء حظره من مجموعات البوت")  
+Reply_Status(msg,userid,"reply","💢┇تم الغاء حظره عام من المجموعات")  
 return false
 end
 
-if text == ("رفع مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBuShInKi(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
+if text == ("اضف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBuShInKi(msg) then
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Sudo:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعة مطور في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعه مطور في البوت")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false 
 end
-if text and text:match("^رفع مطور @(.*)$") and DevBuShInKi(msg) then
-local username = text:match("^رفع مطور @(.*)$")
+if text and text:match("^اضف مطور @(.*)$") and DevBuShInKi(msg) then
+local username = text:match("^اضف مطور @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
@@ -2248,7 +2236,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Sudo:User", result.id_)
-Reply_Status(msg,result.id_,"reply","🔖┇تم رفعة مطور في البوت")  
+Reply_Status(msg,result.id_,"reply","🔖┇تم رفعه مطور في البوت")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2256,22 +2244,16 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInKi, nil)
 return false 
 end
-if text and text:match("^رفع مطور (%d+)$") and DevBuShInKi(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
-local userid = text:match("^رفع مطور (%d+)$")
+if text and text:match("^اضف مطور (%d+)$") and DevBuShInKi(msg) then
+local userid = text:match("^اضف مطور (%d+)$")
 database:sadd(bot_id.."BuShInKi:Sudo:User", userid)
-Reply_Status(msg,userid,"reply","🔖┇تم رفعة مطور في البوت")  
+Reply_Status(msg,userid,"reply","🔖┇تم رفعه مطور في البوت")  
 return false 
 end
 if text == ("حذف مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBuShInKi(msg) then
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Sudo:User", result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيلة مطور من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من المطورين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false 
@@ -2281,7 +2263,7 @@ local username = text:match("^حذف مطور @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Sudo:User", result.id_)
-Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيلة مطور من البوت")  
+Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من المطورين")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2292,21 +2274,15 @@ end
 if text and text:match("^حذف مطور (%d+)$") and DevBuShInKi(msg) then
 local userid = text:match("^حذف مطور (%d+)$")
 database:srem(bot_id.."BuShInKi:Sudo:User", userid)
-Reply_Status(msg,userid,"reply","🔰┇تم تنزيلة مطور من البوت")  
+Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من المطورين")  
 return false 
 end
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعه منشئ اساسي")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2324,7 +2300,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔖┇تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.id_,"reply","🔖┇تم رفعه منشئ اساسي")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2339,7 +2315,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔖┇تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,userid,"reply","🔖┇تم رفعه منشئ اساسي")  
 return false
 end
 end,nil)
@@ -2349,7 +2325,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من المنشئين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2364,7 +2340,7 @@ function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.id_)
 
-Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من المنشئين")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2379,7 +2355,7 @@ tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sen
 if da.status_.ID == "ChatMemberStatusCreator" then
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔰┇تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من المنشئين")  
 return false
 end
 end,nil)
@@ -2389,7 +2365,7 @@ if text == "المنشئين الاساسين" then
 tdcli_function ({ID = "GetChatMember",chat_id_ = msg.chat_id_,user_id_ = msg.sender_user_id_},function(arg,da) 
 if da.status_.ID == "ChatMemberStatusCreator" then
 local list = database:smembers(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_)
-t = "\n⛔┇قائمة المنشئين الاساسين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة المنشئين الاساسين \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -2419,15 +2395,9 @@ end,nil)
 end
 
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعه منشئ اساسي")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2441,7 +2411,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔖┇تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,result.id_,"reply","🔖┇تم رفعه منشئ اساسي")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2452,13 +2422,13 @@ end
 if text and text:match("^رفع منشئ اساسي (%d+)$") and DevBot(msg) then 
 local userid = text:match("^رفع منشئ اساسي (%d+)$") 
 database:sadd(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔖┇تم رفعة منشئ اساسي في البوت")  
+Reply_Status(msg,userid,"reply","🔖┇تم رفعه منشئ اساسي")  
 return false
 end
 if text == ("تنزيل منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من المنشئين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2469,7 +2439,7 @@ function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, result.id_)
 
-Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من المنشئين")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2480,20 +2450,14 @@ end
 if text and text:match("^تنزيل منشئ اساسي (%d+)$") and DevBot(msg) then 
 local userid = text:match("^تنزيل منشئ اساسي (%d+)$") 
 database:srem(bot_id.."BuShInKi:Basic:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔰┇تم تنزيلة منشئ اساسي من البوت")  
+Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من المنشئين")  
 return false
 end
 
 if text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم رفعه منشئ في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعه منشئ في المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 end
@@ -2506,7 +2470,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔰┇تم رفعه منشئ في البوت")  
+Reply_Status(msg,result.id_,"reply","🔖┇تم رفعه منشئ في المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2517,12 +2481,12 @@ end
 if text and text:match("^رفع منشئ (%d+)$") and BasicConstructor(msg) then 
 local userid = text:match("^رفع منشئ (%d+)$")
 database:sadd(bot_id.."BuShInKi:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔰┇تم رفعه منشئ في البوت")  
+Reply_Status(msg,userid,"reply","🔖┇تم رفعه منشئ في المجموعه")  
 end
 if text and text:match("^تنزيل منشئ$") and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Constructor"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيلة منشئ من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من المنشئين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 end
@@ -2532,7 +2496,7 @@ local username = text:match("^تنزيل منشئ @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Constructor"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيلة منشئ من البوت")  
+Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من المنشئين")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2543,19 +2507,13 @@ end
 if text and text:match("^تنزيل منشئ (%d+)$") and BasicConstructor(msg) then 
 local userid = text:match("^تنزيل منشئ (%d+)$")
 database:srem(bot_id.."BuShInKi:Constructor"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔰┇تم تنزيلة منشئ من البوت")  
+Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من المنشئين")  
 end
 
 if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعة مدير في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعه مدير المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2569,7 +2527,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔖┇تم رفعة مدير في البوت")  
+Reply_Status(msg,result.id_,"reply","🔖┇تم رفعه مدير المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2581,13 +2539,13 @@ end
 if text and text:match("^رفع مدير (%d+)$") and Constructor(msg) then 
 local userid = text:match("^رفع مدير (%d+)$") 
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔖┇تم رفعة مدير في البوت")  
+Reply_Status(msg,userid,"reply","🔖┇تم رفعه مدير المجموعه")  
 return false
 end  
 if text == ("تنزيل مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله مدير من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من المدراء")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2597,7 +2555,7 @@ local username = text:match("^تنزيل مدير @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله مدير من البوت")  
+Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من المدراء")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2608,24 +2566,18 @@ end
 if text and text:match("^تنزيل مدير (%d+)$") and Constructor(msg) then 
 local userid = text:match("^تنزيل مدير (%d+)$") 
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔰┇تم تنزيله مدير من البوت")  
+Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من المدراء")  
 return false
 end
 
-if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
+if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then 
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعة ادمن في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعه ادمن للمجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2643,7 +2595,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔖┇تم رفعة ادمن في البوت")  
+Reply_Status(msg,result.id_,"reply","🔖┇تم رفعه ادمن للمجموعه")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2658,13 +2610,13 @@ send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك ل�
 return false
 end
 database:sadd(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔖┇تم رفعة ادمن في البوت")  
+Reply_Status(msg,userid,"reply","🔖┇تم رفعه ادمن للمجموعه")  
 return false
 end
 if text == ("تنزيل ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then 
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيلة ادمن من البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من ادمنيه المجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2674,7 +2626,7 @@ local username = text:match("^تنزيل ادمن @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيلة ادمن من البوت")  
+Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من ادمنيه المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2685,24 +2637,18 @@ end
 if text and text:match("^تنزيل ادمن (%d+)$") and Owner(msg) then 
 local userid = text:match("^تنزيل ادمن (%d+)$")
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔰┇تم تنزيلة ادمن من البوت")  
+Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من ادمنيه المجموعه")  
 return false
 end
 
 if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
 return false
 end
 function Function_BuShInKi(extra, result, success)
 database:sadd(bot_id.."BuShInKi:Special:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعة مميز في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔖┇تم رفعه مميز للمجموعه")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2720,7 +2666,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Special:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔖┇تم رفعة مميز في البوت")  
+Reply_Status(msg,result.id_,"reply","🔖┇تم رفعه مميز للمجموعه")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2728,7 +2674,6 @@ end
 tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInKi, nil)
 return false
 end
-
 if text and text:match("^رفع مميز (%d+)$") and Addictive(msg) then 
 local userid = text:match("^رفع مميز (%d+)$")
 if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
@@ -2736,20 +2681,14 @@ send(msg.chat_id_, msg.id_,'✖┇لا تستطيع رفع احد وذالك ل�
 return false
 end
 database:sadd(bot_id.."BuShInKi:Special:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔖┇تم رفعة مميز في البوت")  
+Reply_Status(msg,userid,"reply","🔖┇تم رفعه مميز للمجموعه")  
 return false
 end
 
 if (text == ("تنزيل مميز")) and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 function Function_BuShInKi(extra, result, success)
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من المميزين في البوت")  
+Reply_Status(msg,result.sender_user_id_,"reply","🔰┇تم تنزيله من المميزين")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -2759,7 +2698,7 @@ local username = text:match("^تنزيل مميز @(.*)$")
 function Function_BuShInKi(extra, result, success)
 if result.id_ then
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من المميزين في البوت")  
+Reply_Status(msg,result.id_,"reply","🔰┇تم تنزيله من المميزين")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -2770,7 +2709,7 @@ end
 if text and text:match("^تنزيل مميز (%d+)$") and Addictive(msg) then 
 local userid = text:match("^تنزيل مميز (%d+)$") 
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من المميزين في البوت")  
+Reply_Status(msg,userid,"reply","🔰┇تم تنزيله من المميزين")  
 return false
 end  
 if text and text:match("رفع (.*)") and tonumber(msg.reply_to_message_id_) > 0 and Addictive(msg) then 
@@ -2780,19 +2719,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم رفعه "..RTPA.." هنا\n")   
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA) 
 database:sadd(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.sender_user_id_)  
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم رفعه "..RTPA.." هنا\n")   
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)
 database:sadd(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.sender_user_id_)  
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم رفعه "..RTPA.." هنا\n")   
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_,RTPA)  
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.sender_user_id_)  
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔖┇تم رفعه "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم رفعه "..RTPA.." هنا\n")   
 end
 end,nil)   
 end   
@@ -2806,19 +2745,19 @@ function by_reply(extra, result, success)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..RTPA..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم تنزيله من "..RTPA.." هنا\n")   
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم تنزيله من "..RTPA.." هنا\n")   
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.sender_user_id_) 
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم تنزيله من "..RTPA.." هنا\n")   
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.sender_user_id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.sender_user_id_)
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "BuShInKi")..")".."\n🔰┇تم تنزيلة من "..RTPA.." هنا\n")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "BOBBW")..")".."\n📬┇تم تنزيله من "..RTPA.." هنا\n")   
 end
 end,nil)   
 end   
@@ -2832,19 +2771,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n📬┇تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n📬┇تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.id_)  
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n📬┇تم رفعه "..text1[2].." هنا")   
 database:sadd(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.id_)  
 database:set(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_,text1[2])
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔖┇تم رفعه "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n📬┇تم رفعه "..text1[2].." هنا")   
 end
 else
 info = "📌┇المعرف غلط"
@@ -2861,19 +2800,19 @@ function py_username(extra, result, success)
 if result.id_ then
 local BuShInKirt = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..text1[2]..msg.chat_id_)
 if BuShInKirt == "مميز" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."BuShInKi:Special:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif BuShInKirt == "ادمن" and Owner(msg) then 
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."BuShInKi:Mod:User"..msg.chat_id_,result.id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif BuShInKirt == "مدير" and Constructor(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 database:srem(bot_id.."BuShInKi:Manager"..msg.chat_id_,result.id_)  
 database:del(bot_id.."BuShInKi:Comd:New:rt:User:"..msg.chat_id_..result.id_)
 elseif BuShInKirt == "عضو" and Addictive(msg) then
-send(msg.chat_id_, msg.id_,"\n👤┇العضو ~⪼ ["..result.title_.."](t.me/"..(text1[3] or "BuShInKi")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
+send(msg.chat_id_, msg.id_,"\n👤┇العضو » ["..result.title_.."](t.me/"..(text1[3] or "BOBBW")..")".."\n🔰┇تم تنريله من "..text1[2].." هنا")   
 end
 else
 info = "📌┇المعرف غلط"
@@ -2885,12 +2824,6 @@ end
 end
 
 if text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -2910,7 +2843,7 @@ return false
 end
 database:sadd(bot_id.."BuShInKi:Ban:User"..msg.chat_id_, result.sender_user_id_)
 Kick_Group(result.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم حظره من المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","☑┇تم حظره من المجموعه")  
 end,nil)   
 end
 end
@@ -2946,7 +2879,7 @@ return false
 end
 database:sadd(bot_id.."BuShInKi:Ban:User"..msg.chat_id_, result.id_)
 Kick_Group(msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","💢┇تم حظره من المجموعه")  
+Reply_Status(msg,result.id_,"reply","☑┇تم حظره من المجموعه")  
 end,nil)   
 end
 else
@@ -2978,18 +2911,12 @@ return false
 end
 database:sadd(bot_id.."BuShInKi:Ban:User"..msg.chat_id_, userid)
 Kick_Group(msg.chat_id_, userid)  
-Reply_Status(msg,userid,"reply","💢┇تم حظره من المجموعه")  
+Reply_Status(msg,userid,"reply","☑┇تم حظره من المجموعه")  
 end,nil)   
 end
 return false
 end
 if text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 function Function_BuShInKi(extra, result, success)
 if tonumber(result.sender_user_id_) == tonumber(bot_id) then
 send(msg.chat_id_, msg.id_, "☑️┇انا لست محظورا \n") 
@@ -3035,12 +2962,6 @@ return false
 end
 
 if text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 function Function_BuShInKi(extra, result, success)
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) == true then
 send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(result.sender_user_id_,msg.chat_id_).." )")
@@ -3051,7 +2972,7 @@ send(msg.chat_id_, msg.id_,"🚸┇البوت ليس ادمن يرجى ترقي�
 return false  
 end
 database:sadd(bot_id.."BuShInKi:Muted:User"..msg.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم كتمه من هنا")  
+Reply_Status(msg,result.sender_user_id_,"reply","☑┇تم كتمه من هنا")  
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 return false
@@ -3073,7 +2994,7 @@ send(msg.chat_id_,msg.id_,"💢┇عذرا عزيزي المستخدم هاذا 
 return false 
 end      
 database:sadd(bot_id.."BuShInKi:Muted:User"..msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","💢┇تم كتمه من هنا")  
+Reply_Status(msg,result.id_,"reply","☑┇تم كتمه من هنا")  
 else
 send(msg.chat_id_, msg.id_, "💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -3091,7 +3012,7 @@ send(msg.chat_id_, msg.id_,"🚸┇البوت ليس ادمن يرجى ترقي�
 return false  
 end
 database:sadd(bot_id.."BuShInKi:Muted:User"..msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","💢┇تم كتمه من هنا")  
+Reply_Status(msg,userid,"reply","☑┇تم كتمه من هنا")  
 end
 return false
 end
@@ -3125,18 +3046,11 @@ return false
 end
 
 if text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
-function Function_BuShInKi(extra, result, success)
 if Rank_Checking(result.sender_user_id_, msg.chat_id_) then
 send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(result.sender_user_id_,msg.chat_id_).." )")
 else
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم تقييده في المجموعه")  
+Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم تقييده من المجموعه")  
 end
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
@@ -3156,7 +3070,7 @@ send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او ح�
 return false 
 end      
 https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..result.id_)
-Reply_Status(msg,result.id_,"reply","💢┇تم تقييده في المجموعه")  
+Reply_Status(msg,result.id_,"reply","💢┇تم تقييده من المجموعه")  
 else
 send(msg.chat_id_, msg.id_,"💢┇لا يوجد حساب بهاذا المعرف")
 end
@@ -3171,7 +3085,7 @@ if Rank_Checking(userid, msg.chat_id_) then
 send(msg.chat_id_, msg.id_, "\n💢┇عذرا لا تستطيع طرد او حظر او كتم او تقييد ( "..Get_Rank(userid,msg.chat_id_).." )")
 else
 https.request("https://api.telegram.org/bot" .. token .. "/restrictChatMember?chat_id=" .. msg.chat_id_ .. "&user_id=" ..userid)
-Reply_Status(msg,userid,"reply","💢┇تم تقييده في المجموعه")  
+Reply_Status(msg,userid,"reply","💢┇تم تقييده من المجموعه")  
 end
 return false
 end
@@ -3206,12 +3120,6 @@ Reply_Status(msg,userid,"reply","💢┇تم الغاء تقييده")
 return false
 end
 if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 if not Constructor(msg) and database:get(bot_id.."Ban:Cheking"..msg.chat_id_) then 
 send(msg.chat_id_, msg.id_,'💢┇لقد تم تعطيل الحظر و الطرد من قبل المنشئين')
 return false
@@ -3230,7 +3138,7 @@ send(msg.chat_id_, msg.id_,"🚸┇البوت ليس ادمن يرجى ترقي�
 return false  
 end
 Kick_Group(result.chat_id_, result.sender_user_id_)
-Reply_Status(msg,result.sender_user_id_,"reply","💢┇تم طرده من هنا")  
+Reply_Status(msg,result.sender_user_id_,"reply","☑┇تم طرده من هنا")  
 end,nil)
 end
 end
@@ -3262,7 +3170,7 @@ send(msg.chat_id_, msg.id_,"🚸┇البوت ليس ادمن يرجى ترقي�
 return false  
 end
 Kick_Group(msg.chat_id_, result.id_)
-Reply_Status(msg,result.id_,"reply","💢┇تم طرده من هنا")  
+Reply_Status(msg,result.id_,"reply","☑┇تم طرده من هنا")  
 end,nil)   
 end
 else
@@ -3292,7 +3200,7 @@ send(msg.chat_id_, msg.id_,"🚸┇البوت ليس ادمن يرجى ترقي�
 return false  
 end
 Kick_Group(msg.chat_id_, userid)
-Reply_Status(msg,userid,"reply","💢┇تم طرده من هنا")  
+Reply_Status(msg,userid,"reply","☑┇تم طرده من هنا")  
 end,nil)   
 end
 return false
@@ -3301,28 +3209,28 @@ end
 if text == "تعطيل الطرد" or text == "تعطيل الحظر" then
 if Constructor(msg) then
 database:set(bot_id.."Ban:Cheking"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '🔏┇تم تعطيل ~⪼ الحظر ~ والطرد ')
+send(msg.chat_id_, msg.id_, '🔏┇تم تعطيل » الحظر ~ والطرد ')
 return false
 end
 end
 if text == "تفعيل الطرد" or text == "تفعيل الحظر" then
 if Constructor(msg) then
 database:del(bot_id.."Ban:Cheking"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '☑┇تم تفعيل ~⪼ الحظر ~ والطرد ')
+send(msg.chat_id_, msg.id_, '☑┇تم تفعيل » الحظر ~ والطرد ')
 return false
 end
 end
 if text == "تعطيل الرفع" or text == "تعطيل الترقيه" then
 if Constructor(msg) then
 database:set(bot_id.."Add:Group:Cheking"..msg.chat_id_,"true")
-send(msg.chat_id_, msg.id_, '🔏┇تم تعطيل رفع ~⪼ الادمن ~ المميز ')
+send(msg.chat_id_, msg.id_, '🔏┇تم تعطيل رفع » الادمن ~ المميز ')
 return false
 end
 end
 if text == "تفعيل الرفع" or text == "تفعيل الترقيه" then
 if Constructor(msg) then
 database:del(bot_id.."Add:Group:Cheking"..msg.chat_id_)
-send(msg.chat_id_, msg.id_, '☑┇تم تفعيل رفع ~⪼ الادمن ~ المميز ')
+send(msg.chat_id_, msg.id_, '☑┇تم تفعيل رفع » الادمن ~ المميز ')
 return false
 end
 end
@@ -3370,12 +3278,6 @@ database:hset(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_ ,"floodtime" ,
 send(msg.chat_id_, msg.id_,"📮┇تم وضع زمن التكرار ("..Num..")") 
 end
 if text == "ضع رابط" or text == "وضع رابط" then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 if msg.reply_to_message_id_ == 0  and Addictive(msg) then  
 send(msg.chat_id_,msg.id_,"📥┇ارسل رابط المجموعه او رابط قناة المجموعه")
 database:setex(bot_id.."BuShInKi:Set:Priovate:Group:Link"..msg.chat_id_..""..msg.sender_user_id_,120,true) 
@@ -3383,12 +3285,6 @@ return false
 end
 end
 if text == "تفعيل جلب الرابط" or text == 'تفعيل الرابط' then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 if Addictive(msg) then  
 database:set(bot_id.."BuShInKi:Link_Group"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"📮┇تم تفعيل جلب الرابط المجموعه") 
@@ -3402,12 +3298,6 @@ send(msg.chat_id_, msg.id_,"☑┇تم تعطيل جلب رابط المجموع
 return false end
 end
 if text == "الرابط" then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 local status_Link = database:get(bot_id.."BuShInKi:Link_Group"..msg.chat_id_)
 if not status_Link then
 send(msg.chat_id_, msg.id_,"☑┇جلب الرابط معطل") 
@@ -3415,19 +3305,19 @@ return false
 end
 local link = database:get(bot_id.."BuShInKi:Private:Group:Link"..msg.chat_id_)            
 if link then                              
-send(msg.chat_id_,msg.id_,"*📮- 𝙻𝙸𝙽𝙺  𝙶𝚁𝚄𝙿  :*\n••━━━━━━━━━━━━••\n ["..link.."]")                          
+send(msg.chat_id_,msg.id_,"- 𝙻𝙸𝙽𝙺  𝙶𝚁𝚄𝙿  :\n••━━━━━━━━━━━━••\n ["..link.."]")                          
 else                
 local linkgpp = json:decode(https.request('https://api.telegram.org/bot'..token..'/exportChatInviteLink?chat_id='..msg.chat_id_))
 if linkgpp.ok == true then 
-send(msg.chat_id_,msg.id_,"*📮- 𝙻𝙸𝙽𝙺  𝙶𝚁𝚄𝙿  :*\n••━━━━━━━━━━━━••\n ["..linkgpp.result.."]")                          
+send(msg.chat_id_,msg.id_,"- 𝙻𝙸𝙽𝙺  𝙶𝚁𝚄𝙿  :\n••━━━━━━━━━━━━••\n ["..linkgpp.result.."]")                          
 else
-send(msg.chat_id_, msg.id_,"🙋??‍♂️┇لا يوجد رابط ارسل ضع رابط")              
+send(msg.chat_id_, msg.id_,"📫┇لا يوجد رابط ارسل ضع رابط")              
 end
 end            
 end
 if text == "مسح الرابط" or text == "حذف الرابط" then
 if Addictive(msg) then     
-send(msg.chat_id_,msg.id_,"☑┇تم مسح رابط المجموعة")           
+send(msg.chat_id_,msg.id_,"☑┇تم مسح الرابط ")           
 database:del(bot_id.."BuShInKi:Private:Group:Link"..msg.chat_id_) 
 return false      
 end
@@ -3456,7 +3346,7 @@ if text == "ضع ترحيب" or text == "وضع ترحيب" then
 if Addictive(msg) then
 database:setex(bot_id.."BuShInKi:Welcome:Group" .. msg.chat_id_ .. "" .. msg.sender_user_id_, 120, true)  
 t  = "🔖┇ارسل لي الترحيب الان"
-tt = "\n📫┇تستطيع اضافة مايلي !\n👤┇دالة عرض الاسم ~⪼{`name`}\n📌┇دالة عرض المعرف ~⪼{`user`}"
+tt = "\n📫┇تستطيع اضافة مايلي !\n👤┇دالة عرض الاسم »{`name`}\n📌┇دالة عرض المعرف »{`user`}"
 send(msg.chat_id_, msg.id_,t..tt) 
 end
 return false  
@@ -3500,10 +3390,10 @@ end
 
 if text == "قائمه المنع" and Addictive(msg) then   
 local list = database:smembers(bot_id.."BuShInKi:List:Filter"..msg.chat_id_)  
-t = "\n⛔┇قائمة المنع \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة المنع \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do  
 local BuShInKi_Msg = database:get(bot_id.."BuShInKi:Add:Filter:Rp2"..v..msg.chat_id_)   
-t = t..""..k.."- "..v.." ~⪼ {"..BuShInKi_Msg.."}\n"    
+t = t..""..k.."- "..v.." » {"..BuShInKi_Msg.."}\n"    
 end  
 if #list == 0 then  
 t = "📬┇لا يوجد كلمات ممنوعه"  
@@ -3576,7 +3466,7 @@ end
 if text == ("كشف البوتات") and Addictive(msg) then  
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersBots"},offset_ = 0,limit_ = 100 },function(extra,result,success)
 local admins = result.members_  
-text = "\n📊┇قائمة البوتات الموجوده \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+text = "\n⛔┇قائمة البوتات الموجوده \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 local n = 0
 local t = 0
 for i=0 , #admins do 
@@ -3591,11 +3481,11 @@ tr = " {✯}"
 end
 text = text..">> [@"..ta.username_.."]"..tr.."\n"
 if #admins == 0 then
-send(msg.chat_id_, msg.id_, "🔘┇لا توجد بوتات في المجموعه")
+send(msg.chat_id_, msg.id_, "📌┇لا توجد بوتات في المجموعه")
 return false 
 end
 if #admins == i then 
-local a = "\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n📮┇عدد البوتات التي هنا >> {"..n.."} بوت\n"
+local a = "\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n📮┇عدد البوتات التي هنا >> {"..n.."} بوت\n"
 local f = "🔖┇عدد البوتات التي هي ادمن >> {"..t.."}\n💢┇ملاحضه علامة ال (✯) تعني ان البوت ادمن \n💥"
 send(msg.chat_id_, msg.id_, text..a..f)
 end
@@ -3606,7 +3496,7 @@ end
 
 if database:get(bot_id.."BuShInKi:Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_) then 
 if text == "الغاء" then 
-send(msg.chat_id_, msg.id_, "☑┇تم الغاء حفظ القوانين") 
+send(msg.chat_id_, msg.id_, "📫┇تم الغاء حفظ القوانين") 
 database:del(bot_id.."BuShInKi:Set:Rules:" .. msg.chat_id_ .. ":" .. msg.sender_user_id_)
 return false  
 end 
@@ -3637,14 +3527,8 @@ end
 end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 local list = database:smembers(bot_id.."BuShInKi:List:Cmd:Group:New"..msg.chat_id_.."")
-t = "🔰┇قائمه الاوامر المضافه  \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "🔰┇قائمه الاوامر المضافه  \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 Cmds = database:get(bot_id.."BuShInKi:Set:Cmd:Group:New1"..msg.chat_id_..":"..v)
 if Cmds then 
@@ -3669,12 +3553,6 @@ send(msg.chat_id_, msg.id_,"🔰┇تم مسح جميع الاوامر التي 
 end
 end
 if text == "اضف امر" and Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 database:set(bot_id.."BuShInKi:Set:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_,"true") 
 send(msg.chat_id_, msg.id_,"🔰┇الان ارسل لي الامر القديم ..")  
 return false
@@ -3693,7 +3571,7 @@ if #list == 0 then
 send(msg.chat_id_, msg.id_,"🔖┇لا توجد صلاحيات مضافه")
 return false
 end
-t = "\n⛔┇قائمة الصلاحيات المضافه \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة الصلاحيات المضافه \n━━━━━━━━━━━━━\n"
 for k,v in pairs(list) do
 var = database:get(bot_id.."BuShInKi:Comd:New:rt:bot:"..v..msg.chat_id_)
 if var then
@@ -3760,37 +3638,37 @@ end
 if text and text:match("^تغير رد المطور (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المطور (.*)$") 
 database:set(bot_id.."BuShInKi:Sudo:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المطور الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المطور الى » "..Teext)
 end
 if text and text:match("^تغير رد المنشئ الاساسي (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المنشئ الاساسي (.*)$") 
 database:set(bot_id.."BuShInKi:BasicConstructor:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المنشئ الاساسي الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المنشئ الاساسي الى » "..Teext)
 end
 if text and text:match("^تغير رد المنشئ (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المنشئ (.*)$") 
 database:set(bot_id.."BuShInKi:Constructor:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المنشئ الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المنشئ الى » "..Teext)
 end
 if text and text:match("^تغير رد المدير (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المدير (.*)$") 
 database:set(bot_id.."BuShInKi:Manager:Rd"..msg.chat_id_,Teext) 
-send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المدير الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المدير الى » "..Teext)
 end
 if text and text:match("^تغير رد الادمن (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد الادمن (.*)$") 
 database:set(bot_id.."BuShInKi:Mod:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد الادمن الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد الادمن الى » "..Teext)
 end
 if text and text:match("^تغير رد المميز (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد المميز (.*)$") 
 database:set(bot_id.."BuShInKi:Special:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المميز الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد المميز الى » "..Teext)
 end
 if text and text:match("^تغير رد العضو (.*)$") and Owner(msg) then
 local Teext = text:match("^تغير رد العضو (.*)$") 
 database:set(bot_id.."BuShInKi:Memp:Rd"..msg.chat_id_,Teext)
-send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد العضو الى ~⪼ "..Teext)
+send(msg.chat_id_, msg.id_,"🔖┇ تم تغير رد العضو الى » "..Teext)
 end
 
 
@@ -3811,7 +3689,7 @@ send(msg.chat_id_, msg.id_,"??┇تم مسح ردود المدير")
 end
 if text == ("ردود المدير") and Owner(msg) then
 local list = database:smembers(bot_id.."BuShInKi:List:Manager"..msg.chat_id_.."")
-text = "📑┇قائمه ردود المدير \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ\n"
+text = "📑┇قائمه ردود المدير \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."BuShInKi:Add:Rd:Manager:Gif"..v..msg.chat_id_) then
 db = "متحركه 🎭"
@@ -3830,7 +3708,7 @@ db = "ملف 📁"
 elseif database:get(bot_id.."BuShInKi:Add:Rd:Manager:Audio"..v..msg.chat_id_) then
 db = "اغنيه 🎵"
 end
-text = text..""..k..">> ("..v..") ~⪼ {"..db.."}\n"
+text = text..""..k..">> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
 text = "📫┇لا يوجد ردود للمدير"
@@ -3886,12 +3764,12 @@ return false
 end  
 end
 if text == "اضف رد" and Owner(msg) then
-send(msg.chat_id_, msg.id_,"📫┇ارسل الكلمه التي تريد اضافتها")
+send(msg.chat_id_, msg.id_,"📫┇ارسل الكلمه التري تريد اضافتها")
 database:set(bot_id.."BuShInKi:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
 if text == "حذف رد" and Owner(msg) then
-send(msg.chat_id_, msg.id_,"📫┇ارسل الكلمه التي تريد حذفها")
+send(msg.chat_id_, msg.id_,"📫┇ارسل الكلمه التري تريد حذفها")
 database:set(bot_id.."BuShInKi:Set:Manager:rd"..msg.sender_user_id_..":"..msg.chat_id_,"true2")
 return false 
 end
@@ -4001,7 +3879,7 @@ send(msg.chat_id_, msg.id_,"📌┇تم مسح ردود المطور")
 end
 if text == ("ردود المطور") and DevBuShInKi(msg) then 
 local list = database:smembers(bot_id.."BuShInKi:List:Rd:Sudo")
-text = "\n⛔┇قائمة ردود المطور \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ\n"
+text = "\n⛔┇قائمة ردود المطور \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉\n"
 for k,v in pairs(list) do
 if database:get(bot_id.."BuShInKi:Add:Rd:Sudo:Gif"..v) then
 db = "متحركه 🎭"
@@ -4020,7 +3898,7 @@ db = "ملف 📁"
 elseif database:get(bot_id.."BuShInKi:Add:Rd:Sudo:Audio"..v) then
 db = "اغنيه 🎵"
 end
-text = text..""..k.." >> ("..v..") ~⪼ {"..db.."}\n"
+text = text..""..k.." >> ("..v..") » {"..db.."}\n"
 end
 if #list == 0 then
 text = "📫┇لا يوجد ردود للمطور"
@@ -4077,18 +3955,12 @@ end
 end
 
 if text == "اضف رد للكل" and DevBuShInKi(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
-send(msg.chat_id_, msg.id_,"📥┇ ارسل الكلمه التي تريد اضافتها")
+send(msg.chat_id_, msg.id_,"📥┇ ارسل الكلمه التري تريد اضافتها")
 database:set(bot_id.."BuShInKi:Set:Rd"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
 if text == "حذف رد للكل" and DevBuShInKi(msg) then 
-send(msg.chat_id_, msg.id_,"📫┇ ارسل الكلمه التي تريد حذفها")
+send(msg.chat_id_, msg.id_,"📫┇ ارسل الكلمه التري تريد حذفها")
 database:set(bot_id.."BuShInKi:Set:On"..msg.sender_user_id_..":"..msg.chat_id_,true)
 return false 
 end
@@ -4256,14 +4128,8 @@ end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
 end
 if text == "تاك للكل" and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 tdcli_function({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""), offset_ = 0,limit_ = 200},function(ta,taha)
-local t = "\n*👨‍👧‍👦┇ قائمة الاعضاء \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ* \n"
+local t = "\n⛔┇ قائمة الاعضاء \n━━━━━━━━━━━━━\n"
 x = 0
 local list = taha.members_
 for k, v in pairs(list) do
@@ -4280,12 +4146,12 @@ end
 
 if text == "رتبتي" then
 local rtp = Get_Rank(msg.sender_user_id_,msg.chat_id_)
-send(msg.chat_id_, msg.id_,"🔘┇ رتبتك في البوت ~⪼ "..rtp)
+send(msg.chat_id_, msg.id_,"💢┇ رتبتك في البوت » "..rtp)
 end
 if text == "اسمي"  then 
 tdcli_function({ID="GetUser",user_id_=msg.sender_user_id_},function(extra,result,success)
 if result.first_name_  then
-first_name = "✏️┇ اسمك الاول ← {`"..(result.first_name_).."`}"
+first_name = "🚫┇ اسمك الاول ← {`"..(result.first_name_).."`}"
 else
 first_name = ""
 end   
@@ -4305,10 +4171,10 @@ end
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,ta) 
 tdcli_function({ID="GetChannelFull",channel_id_ = msg.chat_id_:gsub("-100","")},function(arg,data) 
 local taha = "👤┇ عدد الادمنيه : "..data.administrator_count_..
-"\n\n🚫┇ عدد المطرودين : "..data.kicked_count_..
+"\n\n🚷┇ عدد المطرودين : "..data.kicked_count_..
 "\n\n👥┇ عدد الاعضاء : "..data.member_count_..
 "\n\n📨┇ عدد رسائل الكروب : "..(msg.id_/2097152/0.5)..
-"\n\n🔘┇ اسم المجموعه : ["..ta.title_.."]"
+"\n\n📯┇ اسم المجموعه : ["..ta.title_.."]"
 send(msg.chat_id_, msg.id_, taha) 
 end,nil)
 end,nil)
@@ -4333,13 +4199,13 @@ send(msg.chat_id_, msg.id_,"💢┇ عذرا لا استطيع طرد ادمني
 return false  
 end
 if data and data.ID and data.ID == "Ok" then
-send(msg.chat_id_, msg.id_,"🚫┇ تم طردك من المجموعه ") 
+send(msg.chat_id_, msg.id_,"🚷┇ تم طردك من المجموعه ") 
 tdcli_function ({ ID = "ChangeChatMemberStatus", chat_id_ = msg.chat_id_, user_id_ = msg.sender_user_id_, status_ = { ID = "ChatMemberStatusLeft" },},function(arg,ban) end,nil)   
 return false
 end
 end,nil)   
 else
-send(msg.chat_id_, msg.id_,"🔘┇ امر اطردني تم تعطيله من قبل المدراء ") 
+send(msg.chat_id_, msg.id_,"💢┇ امر اطردني تم تعطيله من قبل المدراء ") 
 end
 end
 
@@ -4349,7 +4215,7 @@ send(msg.chat_id_, msg.id_,Text)
 end
 if text == "تعطيل اطردني" and Owner(msg) then  
 database:set(bot_id.."BuShInKi:Kick:Me"..msg.chat_id_,true)  
-Text = "\n☑┇تم تعطيل امر اطردني"
+Text = "\n📫┇تم تعطيل امر اطردني"
 send(msg.chat_id_, msg.id_,Text) 
 end
 
@@ -4361,7 +4227,7 @@ if DevBuShInKi(msg) then
 database:srem(bot_id.."BuShInKi:GBan:User",result.id_)
 database:srem(bot_id.."BuShInKi:Ban:User"..msg.chat_id_,result.id_)
 database:srem(bot_id.."BuShInKi:Muted:User"..msg.chat_id_,result.id_)
-usertext = "\n👤┇ العضو ~⪼ ["..result.title_.."](t.me/"..(username or "kenwa")..")"
+usertext = "\n👤┇ العضو » ["..result.title_.."](t.me/"..(username or "kenwa")..")"
 status  = "\n📫┇ تم الغاء القيود عنه"
 texts = usertext..status
 send(msg.chat_id_, msg.id_,texts)
@@ -4388,7 +4254,7 @@ else
 database:srem(bot_id.."BuShInKi:Ban:User"..msg.chat_id_,result.sender_user_id_)
 database:srem(bot_id.."BuShInKi:Muted:User"..msg.chat_id_,result.sender_user_id_)
 tdcli_function ({ID = "GetUser",user_id_ = result.sender_user_id_},function(arg,data) 
-usertext = "\n👤┇ العضو ~⪼ ["..data.first_name_.."](t.me/"..(data.username_ or "kenwa")..")"
+usertext = "\n👤┇ العضو » ["..data.first_name_.."](t.me/"..(data.username_ or "kenwa")..")"
 status  = "\n📫┇ تم الغاء القيود عنه"
 send(msg.chat_id_, msg.id_, usertext..status)
 end,nil)
@@ -4415,7 +4281,7 @@ GBan = "محظور عام"
 else
 GBan = "غير محظور عام"
 end
-send(msg.chat_id_, msg.id_,"📫┇ الحظر العام ~⪼ "..GBan.."\n🚫┇ الحظر ~⪼ "..Ban.."\n📮┇ الكتم ~⪼ "..Muted)
+send(msg.chat_id_, msg.id_,"📫┇ الحظر العام » "..GBan.."\n🚫┇ الحظر » "..Ban.."\n📮┇ الكتم » "..Muted)
 else
 send(msg.chat_id_, msg.id_,"📫┇ المعرف غلط")
 end
@@ -4440,7 +4306,7 @@ GBan = "محظور عام"
 else
 GBan = "غير محظور عام"
 end
-Textt = "📫┇ الحظر العام ~⪼ "..GBan.."\n🚫┇ الحظر ~⪼ "..Ban.."\n📮┇ الكتم ~⪼ "..Muted..""
+Textt = "📫┇ الحظر العام » "..GBan.."\n🚫┇ الحظر » "..Ban.."\n📮┇ الكتم » "..Muted..""
 send(msg.chat_id_, msg.id_,Textt)
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
@@ -4545,12 +4411,12 @@ end
 end
 if text == "تفعيل المغادره" and DevBuShInKi(msg) then   
 database:del(bot_id.."BuShInKi:Left:Bot"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_,"📫┇تم تفعيل مغادرة البوت") 
 return false 
 end
 if text == "تعطيل المغادره" and DevBuShInKi(msg) then  
 database:set(bot_id.."BuShInKi:Left:Bot"..msg.chat_id_,true)   
-send(msg.chat_id_, msg.id_, "☑┇تم تعطيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_, "📫┇تم تعطيل مغادرة البوت") 
 return false 
 end
 if text == (database:get(bot_id.."BuShInKi:Name:Bot") or "BuShInKi") then
@@ -4614,7 +4480,7 @@ send(msg.chat_id_, msg.id_,"📫┇الاذاعه معطله من قبل الم�
 return false
 end
 database:setex(bot_id.."BuShInKi:BuShInKi:Bc:Grops" .. msg.chat_id_ .. ":" .. msg.sender_user_id_, 600, true) 
-send(msg.chat_id_, msg.id_,"🔘┇ارسل لي سواء ~ { ملصق, متحركه, صوره, رساله }\n??┇للخروج ارسل الغاء ") 
+send(msg.chat_id_, msg.id_,"🔘┇ارسل لي سواء ~ { ملصق, متحركه, صوره, رساله }\n📫┇للخروج ارسل الغاء ") 
 return false
 end  
 if text=="اذاعه بالتثبيت" and msg.reply_to_message_id_ == 0 and DevBot(msg) then 
@@ -4647,12 +4513,12 @@ end
 
 if text == "تفعيل الاذاعه" and DevBuShInKi(msg) then  
 database:del(bot_id.."BuShInKi:Status:Bc") 
-send(msg.chat_id_, msg.id_,"\n☑┇تم تفعيل الاذاعه " ) 
+send(msg.chat_id_, msg.id_,"\n📫┇تم تفعيل الاذاعه " ) 
 return false
 end 
 if text == "تعطيل الاذاعه" and DevBuShInKi(msg) then  
 database:set(bot_id.."BuShInKi:Status:Bc",true) 
-send(msg.chat_id_, msg.id_,"\n☑┇تم تعطيل الاذاعه") 
+send(msg.chat_id_, msg.id_,"\n📫┇تم تعطيل الاذاعه") 
 return false
 end 
 
@@ -4948,49 +4814,43 @@ end
 Num_Flood = database:hget(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_,"floodmax") or 0
 local text = 
 "*\n🔰┇ااعدادات المجموعه "..
-"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
+"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
 "\n🔏┇علامة ال {✓} تعني مفعل"..
 "\n🔓┇علامة ال {✘} تعني معطل"..
-"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
-"\n📌┇الروابط ~⪼ "..lock_links..
-"\n".."📌┇المعرفات ~⪼ "..lock_user..
-"\n".."📌┇التاك ~⪼ "..lock_hash..
-"\n".."📌┇البوتات ~⪼ "..lock_bots..
-"\n".."📌┇التوجيه ~⪼ "..lock_fwd..
-"\n".."??┇التثبيت ~⪼ "..lock_pin..
-"\n".."📌┇الاشعارات ~⪼ "..lock_tagservr..
-"\n".."📌┇الماركدون ~⪼ "..lock_mark..
-"\n".."📌┇التعديل ~⪼ "..lock_edit..
-"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
-"\n".."📌┇الكلايش ~⪼ "..lock_spam..
-"\n".."📌┇الكيبورد ~⪼ "..lock_inlin..
-"\n".."📌┇الاغاني ~⪼ "..lock_vico..
-"\n".."📌┇المتحركه ~⪼ "..lock_gif..
-"\n".."📌┇الملفات ~⪼ "..lock_file..
-"\n".."📌┇الدردشه ~⪼ "..lock_text..
-"\n".."📌┇الفيديو ~⪼ "..lock_ved..
-"\n".."📌┇الصور ~⪼ "..lock_photo..
-"\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ "..
-"\n".."📌┇الصوت ~⪼ "..lock_muse..
-"\n".."📌┇الملصقات ~⪼ "..lock_ste..
-"\n".."📌┇الجهات ~⪼ "..lock_phon..
-"\n".."📌┇الدخول ~⪼ "..lock_join..
-"\n".."📌┇الاضافه ~⪼ "..lock_add..
-"\n".."📌┇السيلفي ~⪼ "..lock_self..
-"\n".."📌┇الالعاب ~⪼ "..lock_geam..
-"\n".."📌┇التكرار ~⪼ "..flood..
-"\n".."📌┇الترحيب ~⪼ "..welcome..
-"\n".."📌┇عدد التكرار ~⪼ "..Num_Flood..
+"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
+"\n📌┇الروابط » "..lock_links..
+"\n".."📌┇المعرفات » "..lock_user..
+"\n".."📌┇التاك » "..lock_hash..
+"\n".."📌┇البوتات » "..lock_bots..
+"\n".."📌┇التوجيه » "..lock_fwd..
+"\n".."??┇التثبيت » "..lock_pin..
+"\n".."📌┇الاشعارات » "..lock_tagservr..
+"\n".."📌┇الماركدون » "..lock_mark..
+"\n".."📌┇التعديل » "..lock_edit..
+"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
+"\n".."📌┇الكلايش » "..lock_spam..
+"\n".."📌┇الكيبورد » "..lock_inlin..
+"\n".."📌┇الاغاني » "..lock_vico..
+"\n".."📌┇المتحركه » "..lock_gif..
+"\n".."📌┇الملفات » "..lock_file..
+"\n".."📌┇الدردشه » "..lock_text..
+"\n".."📌┇الفيديو » "..lock_ved..
+"\n".."📌┇الصور » "..lock_photo..
+"\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ "..
+"\n".."📌┇الصوت » "..lock_muse..
+"\n".."📌┇الملصقات » "..lock_ste..
+"\n".."📌┇الجهات » "..lock_phon..
+"\n".."📌┇الدخول » "..lock_join..
+"\n".."📌┇الاضافه » "..lock_add..
+"\n".."📌┇السيلفي » "..lock_self..
+"\n".."📌┇الالعاب » "..lock_geam..
+"\n".."📌┇التكرار » "..flood..
+"\n".."📌┇الترحيب » "..welcome..
+"\n".."📌┇عدد التكرار » "..Num_Flood..
 "\n\n.*"
 send(msg.chat_id_, msg.id_,text)     
 end    
 if text == "تعطيل اوامر التحشيش" and Owner(msg) then    
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 send(msg.chat_id_, msg.id_, '☑┇تم تعطيل اوامر التحشيش')
 database:set(bot_id.."BuShInKi:Fun_Bots"..msg.chat_id_,"true")
 end
@@ -5000,12 +4860,6 @@ database:del(bot_id.."BuShInKi:Fun_Bots"..msg.chat_id_)
 end
 
 if text == 'تفعيل الايدي' and Owner(msg) then   
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 database:del(bot_id..'BuShInKi:Lock:ID:Bot'..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,'☑┇تم تفعيل الايدي') 
 end
@@ -5013,13 +4867,7 @@ if text == 'تعطيل الايدي' and Owner(msg) then
 database:set(bot_id..'BuShInKi:Lock:ID:Bot'..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,'☑┇تم تعطيل الايدي') 
 end
-if text == 'تفعيل الايدي بالصوره' and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end  
+if text == 'تفعيل الايدي بالصوره' and Owner(msg) then   
 database:del(bot_id..'BuShInKi:Lock:ID:Bot:Photo'..msg.chat_id_) 
 send(msg.chat_id_, msg.id_,'☑┇تم تفعيل الايدي بالصوره') 
 end
@@ -5030,8 +4878,8 @@ end
 if text == 'تعين الايدي' and Owner(msg) then
 database:setex(bot_id.."BuShInKi:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_,240,true)  
 local Text= [[
-📮┇ارسل الان النص
-📮┇يمكنك اضافه :
+☑┇ ارسل الان النص
+☑┇ يمكنك اضافه :
 - `#username` > اسم المستخدم
 - `#msgs` > عدد رسائل المستخدم
 - `#photos` > عدد صور المستخدم
@@ -5056,7 +4904,7 @@ end
 
 if database:get(bot_id.."BuShInKi:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) then 
 if text == 'الغاء' then 
-send(msg.chat_id_, msg.id_,"☑┇تم الغاء تعين الايدي") 
+send(msg.chat_id_, msg.id_,"📫┇تم الغاء تعين الايدي") 
 database:del(bot_id.."BuShInKi:Set:Id:Gp"..msg.chat_id_..""..msg.sender_user_id_) 
 return false  
 end 
@@ -5066,12 +4914,6 @@ send(msg.chat_id_, msg.id_,'📌┇تم تعين الايدي')
 end
 
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'BuShInKi:Lock:ID:Bot'..msg.chat_id_) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 if not database:sismember(bot_id..'BuShInKi:Spam:Group'..msg.sender_user_id_,text) then
 database:sadd(bot_id.."BuShInKi:Spam:Group"..msg.sender_user_id_,text) 
 tdcli_function ({ID = "GetUserProfilePhotos",user_id_ = msg.sender_user_id_,offset_ = 0,limit_ = 1},function(extra,taha,success) 
@@ -5142,8 +4984,8 @@ end
 end
 if text and text:match('^تنظيف (%d+)$') and Addictive(msg) then    
 local Number = tonumber(text:match('^تنظيف (%d+)$')) 
-if Number > 10000 then 
-send(msg.chat_id_, msg.id_,'📮┇لا تستطيع تنضيف اكثر من *~ 10000* رساله') 
+if Number > 1000 then 
+send(msg.chat_id_, msg.id_,'📮┇لا تستطيع تنضيف اكثر من *~ 1000* رساله') 
 return false  
 end  
 local Message = msg.id_
@@ -5173,7 +5015,7 @@ local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local message_edit = database:get(bot_id..'BuShInKi:message_edit'..msg.chat_id_..data.id_) or 0
 local Num_Games = database:get(bot_id.."BuShInKi:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = database:get(bot_id.."BuShInKi:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
-send(msg.chat_id_, msg.id_,'*🎟┇ايديه - '..Id..'\n📨┇رسائله - '..NumMsg..'\n📌┇معرفه - *['..UserName_User..']*\n💌┇تفاعله - '..TotalMsg..'\n🗳┇رتبته - '..Status_Gps..'\n📔┇تعديلاته - '..message_edit..'\n💠┇جهاته - '..Add_Mem..'*') 
+send(msg.chat_id_, msg.id_,'*🔘┇ايديه - '..Id..'\n📨┇رسائله - '..NumMsg..'\n📌┇معرفه - *['..UserName_User..']*\n📈┇تفاعله - '..TotalMsg..'\n🚸┇رتبته - '..Status_Gps..'\n⚡┇تعديلاته - '..message_edit..'\n💠┇جهاته - '..Add_Mem..'*') 
 end,nil)   
 end
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
@@ -5197,7 +5039,7 @@ local Status_Gps = Get_Rank(Id,msg.chat_id_)
 local message_edit = database:get(bot_id..'BuShInKi:message_edit'..msg.chat_id_..data.id_) or 0
 local Num_Games = database:get(bot_id.."BuShInKi:Msg_User"..msg.chat_id_..":"..data.id_) or 0
 local Add_Mem = database:get(bot_id.."BuShInKi:Add:Memp"..msg.chat_id_..":"..data.id_) or 0
-send(msg.chat_id_, msg.id_,'*🎟┇ايديه - '..Id..'\n📨┇رسائله - '..NumMsg..'\n📌┇معرفه - *['..UserName_User..']*\n💌┇تفاعله - '..TotalMsg..'\n🗳┇رتبته - '..Status_Gps..'\n📔┇تعديلاته - '..message_edit..'\n💠┇جهاته - '..Add_Mem..'*') 
+send(msg.chat_id_, msg.id_,'*🔘┇ايديه - '..Id..'\n📨┇رسائله - '..NumMsg..'\n📌┇معرفه - *['..UserName_User..']*\n📈┇تفاعله - '..TotalMsg..'\n🚸┇رتبته - '..Status_Gps..'\n⚡┇تعديلاته - '..message_edit..'\n💠┇جهاته - '..Add_Mem..'*') 
 end,nil)   
 else
 send(msg.chat_id_, msg.id_,'👤┇لا يوجد حساب بهاذا المعرف')
@@ -5574,36 +5416,31 @@ database:del(bot_id.."BuShInKi:Lock:Games"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"\n☑┇تم تعطيل الالعاب") 
 end
 if text == "تفعيل الالعاب" and Owner(msg) then  
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 database:set(bot_id.."BuShInKi:Lock:Games"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"\n☑┇تم تفعيل الالعاب") 
 end
 if text == 'الالعاب' then
 Teext = [[
-📛┇قائمه الالعاب الموجوده 
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🔖┇لعبة البات ~⪼ بات
-🔖┇لعبة التخمين ~⪼ خمن
-🔖┇لعبه الاسرع ~⪼ الاسرع
-🔖┇لعبة السمايلات ~⪼ سمايلات
-🔖┇لعبة المختلف ~⪼ المختلف
-🔖┇لعبة الامثله ~⪼ امثله
-🔖┇لعبة العكس ~⪼ العكس 
-🔖┇لعبة الحزوره ~⪼ حزوره
-🔖┇لعبة المعاني ~⪼ معاني
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🔖┇Ch ~⪼ @BuShInKi
+📛┇قائمه الالعاب الموجوده
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+☑┇لعبة البات » بات
+☑┇لعبة التخمين » خمن
+☑┇لعبه الاسرع » الاسرع
+☑┇لعبة السمايلات » سمايلات
+☑┇لعبة المختلف » المختلف
+☑┇لعبة الامثله » امثله
+☑┇لعبة العكس » العكس 
+☑┇لعبة الحزوره » حزوره
+☑┇لعبة المعاني » معاني
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
+📌┇مجوهراتي » لعرض عدد الارباح
+🎁┇بيع مجوهراتي + العدد » لستبدال كل مجوهره ب50 رساله
 ]]
 send(msg.chat_id_, msg.id_,Teext) 
 end
 if text == 'رسائلي' then
 local nummsg = database:get(bot_id..'BuShInKi:messageUser'..msg.chat_id_..':'..msg.sender_user_id_) or 1
-local Text = '*💌┇عدد رسائلك هنا ~ '..nummsg..'*'
+local Text = '📨┇عدد رسائلك هنا *~ '..nummsg..'*'
 send(msg.chat_id_, msg.id_,Text) 
 end
 if text == 'مسح رسائلي' then
@@ -5655,7 +5492,7 @@ end
 local NUMNKO = (NUMPY * 50)
 database:decrby(bot_id.."BuShInKi:Add:Num"..msg.chat_id_..msg.sender_user_id_,NUMPY)  
 database:incrby(bot_id.."BuShInKi:messageUser"..msg.chat_id_..":"..msg.sender_user_id_,NUMNKO)  
-send(msg.chat_id_,msg.id_,"☑┇تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n🔘┇وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
+send(msg.chat_id_,msg.id_,"☑┇تم خصم *~ { "..NUMPY.." }* من مجوهراتك \n📨┇وتم اضافة* ~ { "..(NUMPY * 50).." } رساله الى رسالك *")
 end 
 return false 
 end
@@ -5731,9 +5568,9 @@ for i = 1, #pv do
 tdcli_function({ID='GetChat',chat_id_ = pv[i]},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = pv[i], action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,data) 
 if data.ID and data.ID == "Ok"  then
-print('\27[30;33m~⪼~⪼ THE USER IS SAVE ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;33m»» THE USER IS SAVE ME ↓\n»» '..pv[i]..'\n\27[1;37m')
 else
-print('\27[30;31m~⪼~⪼ THE USER IS BLOCK ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;31m»» THE USER IS BLOCK ME ↓\n»» '..pv[i]..'\n\27[1;37m')
 database:srem(bot_id..'BuShInKi:UsersBot',pv[i])  
 sendok = sendok + 1
 end
@@ -5758,19 +5595,19 @@ for i = 1, #group do
 tdcli_function({ID='GetChat',chat_id_ = group[i]
 },function(arg,data)
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusMember" then
-print('\27[30;34m~⪼~⪼ THE BOT IS NOT ADMIN ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;34m»» THE BOT IS NOT ADMIN ↓\n»» '..group[i]..'\n\27[1;37m')
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
 w = w + 1
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusLeft" then
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;35m~⪼~⪼ THE BOT IS LEFT GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;35m»» THE BOT IS LEFT GROUP ↓\n»» '..group[i]..'\n\27[1;37m')
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusKicked" then
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;36m~⪼~⪼ THE BOT IS KICKED GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;36m»» THE BOT IS KICKED GROUP ↓\n»» '..group[i]..'\n\27[1;37m')
 end
 if data and data.code_ and data.code_ == 400 then
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
@@ -5907,7 +5744,7 @@ end,nil)
 end
 end
 if text == 'الملفات' and DevBuShInKi(msg) then
-t = '🗂┇جميع الملفات : \n ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n'
+t = '☑┇جميع الملفات : \n ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n'
 i = 0
 for v in io.popen('ls BuShInKi_Files'):lines() do
 if v:match(".lua$") then
@@ -5924,8 +5761,8 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n🗂┇اهلا بك في متجر ملفات BuShInKi \n📮┇الملفات الموجوده حاليا \nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n\n"
-local TextE = "\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n📌┇تدل علامة (✔) الملف مفعل\n".."📌┇تدل علامة (✖) الملف معطل\n"
+local TextS = "\n📂┇اهلا بك في متجر ملفات BuShInKi \n📮┇الملفات الموجوده حاليا \nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n\n"
+local TextE = "\nꔹ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ꔹ\n📌┇تدل علامة (✔) الملف مفعل\n".."📌┇تدل علامة (✖) الملف معطل\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("BuShInKi_Files/"..name,"r")
@@ -5936,12 +5773,12 @@ else
 CeckFile = "(✖)"
 end
 NumFile = NumFile + 1
-TextS = TextS..'*'..NumFile.."~⪼* {`"..name..'`} ~⪼ '..CeckFile..'\n[- File Information]('..Info..')\n'
+TextS = TextS..'*'..NumFile.."~⪼* {`"..name..'`} » '..CeckFile..'\n[- File Information]('..Info..')\n'
 end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
 else
-send(msg.chat_id_, msg.id_,"⚠┇ لا يوجد اتصال من ال api \n") 
+send(msg.chat_id_, msg.id_,"📮┇ لا يوجد اتصال من ال api \n") 
 end
 return false
 end
@@ -5953,9 +5790,9 @@ local file = name_t[2]..'.lua'
 local file_bot = io.open("BuShInKi_Files/"..file,"r")
 if file_bot then
 io.close(file_bot)
-t = "*🗂┇ الملف ~⪼ {"..file.."}\n☑┇تم تعطيله وحذفه بنجاح \n✓*"
+t = "*🗂┇ الملف » {"..file.."}\n📬┇ تم تعطيله وحذفه بنجاح \n✓*"
 else
-t = "*📬┇ بالتاكيد تم تعطيل وحذف ملف ~⪼ {"..file.."} \n✓*"
+t = "*📬┇ بالتاكيد تم تعطيل وحذف ملف » {"..file.."} \n✓*"
 end
 local json_file, res = https.request("https://raw.githubusercontent.com/Usebot/Files_BuShInKi/master/Files_BuShInKi/"..file)
 if res == 200 then
@@ -5963,7 +5800,7 @@ os.execute("rm -fr BuShInKi_Files/"..file)
 send(msg.chat_id_, msg.id_,t) 
 dofile('BuShInKi.lua')  
 else
-send(msg.chat_id_, msg.id_,"*⚠┇ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
+send(msg.chat_id_, msg.id_,"*📮┇ عذرا لا يوجد هاكذا ملف في المتجر *\n") 
 end
 return false
 end
@@ -5973,9 +5810,9 @@ local file = name_t[2]..'.lua'
 local file_bot = io.open("BuShInKi_Files/"..file,"r") 
 if file_bot then
 io.close(file_bot)
-t = "*📬┇ بالتاكيد تم تنزيل وتفعيل ملف ~⪼ {"..file.."} \n✓*"
+t = "*📬┇ بالتاكيد تم تنزيل وتفعيل ملف » {"..file.."} \n✓*"
 else
-t = "*🗂┇ الملف ~⪼ {"..file.."}\n☐┇ تم تنزيله وتفعيله بنجاح \n💥*"
+t = "*🗂┇ الملف » {"..file.."}\n📬┇ تم تنزيله وتفعيله بنجاح \n💥*"
 end
 local json_file, res = https.request("https://raw.githubusercontent.com/Usebot/Files_BuShInKi/master/Files_BuShInKi/"..file)
 if res == 200 then
@@ -6000,7 +5837,7 @@ send(msg.chat_id_, msg.id_,'☑┇ تم حذف كليشه المطور')
 end
 if text == 'وضع كليشه المطور' and DevBuShInKi(msg) then
 database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_,true)
-send(msg.chat_id_,msg.id_,'📥┇ ارسل الكليشه الان')
+send(msg.chat_id_,msg.id_,'📫┇ ارسل الكليشه الان')
 return false
 end
 if text and database:get(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_) then
@@ -6094,7 +5931,7 @@ send(msg.chat_id_, msg.id_,'🔖┇ تم مسح قائمه منع الملصقا
 end
 
 
-if text == "تحديث" and DevBuShInKi(msg) then
+if (text and text == 'تحديث') and tonumber(msg.sender_user_id_) == tonumber(sudo_add) then
 dofile("BuShInKi.lua")  
 send(msg.chat_id_, msg.id_, "☑┇تم التحديث")
 end
@@ -6103,13 +5940,15 @@ Text = [[
 🔰 Welcome to Source 🔰
 
 🌐┇BuShInKi TEAM 
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📄┇ [Source Channel](https://t.me/BuShInKi)
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+📊┇ [Source Channel](https://t.me/JUU)
 
-📮┇ [Source Info](https://t.me/BuShInKi)
+📊┇ [Source Info](https://t.me/BuShInK0)
 
+🌐┇ [BuShInKi iNDT](https://t.me/JJUU)
+ 
  ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ 
-📧┇ [TWS BuShInKi](https://t.me/Y_8ibot)
+📧┇ [TWS BuShInKi](https://t.me/biyguuyfsgot)
 ]]
 send(msg.chat_id_, msg.id_,Text)
 end
@@ -6123,7 +5962,7 @@ Text = [[
 🎖┇م4 ~⪼ لعرض اوامر المنشئين
 👤┇م5 ~⪼ لعرض اوامر المطورين
 ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
-📡┇CH @BuShInKi
+📡┇CH @b666pppp
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6131,64 +5970,70 @@ end
 if text == 'م1' and Addictive(msg) then
 Text = [[
 📮┇ اوامر حمايه المجموعه
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🔒┇تستخدم الاوامر كلتالي ↓
-🔓┇قفل/فتح+الامر/بلكتم/بالطرد/بتالتقيد√
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🔖┇الروابط
-🔖┇المعرف
-🔖┇التاك
-🔖┇الشارحه
-🔖┇التعديل
-🔖┇التثبيت
-🔖┇المتحركه
-🔖┇الملفات
-🔖┇الصور
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+⏺┇قفل/فتح + الاوامر الادناه 
+⏺┇قفل/فتح + الامر بالتقيد • بالطرد • بالكتم
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+🔐┇الروابط
+🔐┇المعرف
+🔐┇التاك
+🔐┇الشارحه
+🔐┇التعديل
+🔐┇التثبيت
+🔐┇المتحركه
+🔐┇الملفات
+🔐┇الصور
 
-⛑┇الملصقات
-⛑┇الفيديو
-⛑┇الانلاين
-⛑┇الدردشه
-⛑┇التوجيه
-⛑┇الاغاني
-⛑┇الصوت
-⛑┇الجهات
-⛑┇الاشعارات
+🔐┇الملصقات
+🔐┇الفيديو
+🔐┇الانلاين
+🔐┇الدردشه
+🔐┇التوجيه
+🔐┇الاغاني
+🔐┇الصوت
+🔐┇الجهات
+🔐┇الاشعارات
 
-🔗┇الماركداون
-🔗┇البوتات
-🔗┇التكرار
-🔗┇الكلايش
-🔗┇السيلفي
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡┇Ch ~⪼ @BuShInKi
+🔐┇الماركداون
+🔐┇البوتات
+🔐┇التكرار
+🔐┇الكلايش
+🔐┇السيلفي
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+📡┇Ch ~⪼ @b666pppp
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
 end
 if text == 'م2' and Addictive(msg) then
 Text = [[
-📋┇اوامر الادمنيه ↓
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🚫┇رفع/تنزيل مميز
-🚫┇كتم/حظر/طرد/منع/تقيد
-🚫┇الغاء حظر/الغاء كتم
-🚫┇الغاء تقيد/الغاء منع
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🌀┇المحظورين
-🌀┇المكتومين
-🌀┇المميزين
-🌀┇الصلاحيات
-🌀┇قائمه المنع
-🌀┇عدد الكروب
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-🔰┇تثبيت
-🔰┇الغاء تثبيت
-🔰┇الاعدادات
-🔰┇الرابط
-🔰┇القوانين
-🔰┇تاك للكل
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+🥈┇اوامر الادمنيه
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+▶️┇رفع/تنزيل مميز
+📮┇تاك للكل
+📮┇عدد الكروب
+🚫┇كتم
+🚷┇حظر
+🚷┇طرد
+🚫┇منع
+🚫┇تقيد
+⏺┇الغاء حظر
+⏺┇الغاء كتم
+⏺┇الغاء تقيد
+⏺┇الغاء منع
+📋┇المحظورين
+📋┇المكتومين
+📋┇المميزين
+📋┇الصلاحيات
+📋┇قائمه المنع
+
+〽┇تثبيت
+⏺┇الغاء تثبيت
+📄┇الاعدادات
+
+🗳┇الرابط
+📃┇القوانين
+
 👋🏻┇الترحيب
 👋🏻┇تفعيل/تعطيل الترحيب
 ⚠️┇اضف /مسح صلاحيه 
@@ -6198,18 +6043,18 @@ Text = [[
 💭┇سحكاتي
 💭┇رسائلي
 💭┇كشف البوتات
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 🔘┇وضع + الاوامر الادناه
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 📝┇اسم
 📝┇رابط
 📝┇صوره
 📝┇وصف
 📝┇قوانين
 📝┇ترحيب
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 🗑┇مسح + الاوامر الادناه
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 📮┇قائمه المنع
 📮┇المحظورين
 📮┇المميزين
@@ -6220,8 +6065,8 @@ Text = [[
 📮┇الصوره
 📮┇الصلاحيات
 📮┇الرابط
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡┇CH @BuShInKi
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+📡┇CH @b666pppp
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6229,7 +6074,7 @@ end
 if text == 'م3' and Owner(msg) then
 Text = [[
 🥇┇ اوامر المدراء
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ↕️┇رفع/تنزيل ادمن
 ↕️┇رفع/كشف القيود
 ↕️┇تنزيل الكل
@@ -6255,7 +6100,7 @@ Text = [[
 🗑┇تنظيف + عدد
 🗑┇مسح الادمنيه
 🗑┇مسح ردود المدير
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 🔘┇لتغير ردود الايدي :- 
 تغير رد المطور + النص
 تغير رد المنشئ الاساسي + النص
@@ -6264,8 +6109,8 @@ Text = [[
 تغير رد الادمن + النص
 تغير رد المميز + النص
 تغير رد العضو + النص
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡┇CH @BuShInKi
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+📡┇CH @b666pppp
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6273,13 +6118,13 @@ end
 if text == 'م4' and Constructor(msg) then
 Text = [[
 🏅┇اوامر المنشئين الاساسين 
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ↕️┇رفع/تنزيل منشئ
 ↕️┇المنشئين
 🗑┇مسح المنشئين
 
 🏅┇اوامر المنشئين
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ↕️┇رفع/تنزيل مدير
 ↕️┇المدراء
 🗑┇مسح المدراء
@@ -6289,8 +6134,8 @@ Text = [[
 ➕┇حذف/مسح الاوامر المضافه
 ➕┇اضف رسائل + العدد بالرد
 ➕┇اضف مجوهرات + العدد بالرد
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡┇CH @BuShInKi
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+📡┇CH @b666pppp
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6298,12 +6143,12 @@ end
 if text == 'م5' and DevBot(msg) then
 Text = [[
 👁‍🗨┇اوامر المطور الاساسي  
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 ↕️┇حظر عام
 ↕️┇الغاء العام
 🗑┇مسح قائمه العام
 📥┇اضف /حذف مطور 
-👁‍??┇المطورين
+👁‍🗨┇المطورين
 🗑┇مسح المطورين
 📋┇اضف/حذف رد للكل 
 📋┇مسح ردود المطور
@@ -6321,7 +6166,7 @@ Text = [[
 🗑┇مسح جميع الملفات 
 📄┇المتجر 
 🏅┇اوامر المطور 
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
 👁‍🗨┇تفعيل /تعطيل
 
 ↕️┇رفع/تنزيل منشئ اساسي
@@ -6335,8 +6180,8 @@ Text = [[
 ➕┇اذاعه خاص 
 ➕┇اذاعه بالتثبيت 
 ➕┇الاحصائيات 
-ꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ
-📡┇CH @BuShInKi
+┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉
+📡┇CH @b666pppp
 ]]
 send(msg.chat_id_, msg.id_,Text)
 return false
@@ -6346,12 +6191,6 @@ end ---- Chat_Type = 'GroupBot'
 end ---- Chat_Type = 'GroupBot' 
 
 if text == 'تفعيل' and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
 if msg.can_be_deleted_ == false then 
 send(msg.chat_id_, msg.id_,'🚸┇البوت ليس ادمن يرجى ترقيتي !') 
 return false  
@@ -6364,7 +6203,7 @@ end
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if database:sismember(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,'❕┇المجموعه مفعله سابقا ~ '..chat.title_..'')
+send(msg.chat_id_, msg.id_,'📮┇المجموعه مفعله سابقا ')
 else
 Reply_Status(msg,result.id_,'reply_Add','☑┇تم تفعيل المجموعه ~ '..chat.title_..'')
 database:sadd(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_)
@@ -6398,17 +6237,11 @@ end,nil)
 end,nil) 
 end,nil)
 end
-if text == 'تعطيل' and DevBot(msg) then
- local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
-data = JSON.decode(url)
-if data.Ch_Member.BuShInKi ~= true then
-send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
-return false 
-end
+if text == 'تعطيل' and DevBot(msg) then 
 tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(extra,result,success)
 tdcli_function({ID ="GetChat",chat_id_=msg.chat_id_},function(arg,chat)  
 if not database:sismember(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,'❕┇المجموعه معطله سابقا ~ '..chat.title_..'')
+send(msg.chat_id_, msg.id_,'📮┇المجموعه معطله سابقا ')
 else
 Reply_Status(msg,result.id_,'reply_Add','☑┇تم تعطيل المجموعه ~ '..chat.title_..'')
 database:srem(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_)  
@@ -6459,7 +6292,7 @@ else
 var= 'عضو'
 end
 if database:sismember(bot_id..'BuShInKi:Chek:Groups',msg.chat_id_) then
-send(msg.chat_id_, msg.id_,'❕┇المجموعه مفعله سابقا ~ '..chat.title_..'')
+send(msg.chat_id_, msg.id_,'📮┇المجموعه مفعله سابقا ')
 else
 if tonumber(data.member_count_) < tonumber(database:get(bot_id..'BuShInKi:Num:Add:Bot') or 0) and not DevBuShInKi(msg) then
 send(msg.chat_id_, msg.id_,'👥┇عدد اعضاء المجموعه اقل من *~ {'..(database:get(bot_id..'BuShInKi:Num:Add:Bot') or 0)..'* عضو')
@@ -6507,7 +6340,7 @@ end
 if Chat_Type == 'UserBot' then
 if text == '/start' then  
 if DevBuShInKi(msg) then
-local Text = '📥┋مرحبا عزيزي المطور آلاساسي ،\n🔰┋يمكنك اختيار الامر من الكيبورد\n📮┋اضغط على الأمر الذي تـريده !\n🔖┋Ch ~⪼ @BuShInKi'
+local Text = '📥┇مرحبا بك في اوامر المطور الجاهزه'
 local keyboard = {
 {'الاحصائيات 📊'},
 {'تفعيل التواصل ⚡','تعطيل التواصل 🔰'},
@@ -6530,7 +6363,7 @@ local start = database:get(bot_id.."Start:Bot")
 if start then 
 Test = start
 else
-Test = '🌐┋مرحبا بك في بوت الحمايه\n🎫┋آنا آختصاصي حمايه المجموعات\n📛┋مـن آلسـبآم وآلتوجيه وآلتگرآر وآلخ...\n\n📨┋ارسل ما تريد وسارسله الى المطور\n\n🚶🏻‍♂️'
+Test = '🔰┇مرحبا انا بوت حماية كروبات\n🔘┇وضيفتي حماية المجموعات من السبام والتفليش والخ...\n☑┇لتفعيل البوت اضفني الى مجموعاتك قم برفعي مشرف ثم ارسل تفعيل \n☑┇معرف المطور ['..UserName..']'
 end 
 send(msg.chat_id_, msg.id_, Test) 
 end
@@ -6556,12 +6389,12 @@ id_user = result.forward_info_.sender_user_id_
 end     
 tdcli_function ({ID = "GetUser",user_id_ = id_user},function(arg,data) 
 if text == 'حظر' then
-sendText(Id_Sudo,'👤┇ لشخص ~⪼ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n💢┇ تم حظره من التواصل ',msg.id_/2097152/0.5,'md')
+sendText(Id_Sudo,'👤┇ لشخص » ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n💢┇ تم حظره من التواصل ',msg.id_/2097152/0.5,'md')
 database:sadd(bot_id..'BaN:In:User',data.id_)  
 return false  
 end 
 if text =='الغاء الحظر' then
-sendText(Id_Sudo,'👤┇الشخص ~⪼ ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n💢┇ تم الغاء حظره من التواصل ',msg.id_/2097152/0.5,'md')
+sendText(Id_Sudo,'👤┇الشخص » ['..string.sub(data.first_name_,0, 40)..'](tg://user?id='..data.id_..')'..'\n💢┇ تم الغاء حظره من التواصل ',msg.id_/2097152/0.5,'md')
 database:srem(bot_id..'BaN:In:User',data.id_)  
 return false  
 end 
@@ -6610,9 +6443,9 @@ for i = 1, #pv do
 tdcli_function({ID='GetChat',chat_id_ = pv[i]},function(arg,dataq)
 tdcli_function ({ ID = "SendChatAction",chat_id_ = pv[i], action_ = {  ID = "SendMessageTypingAction", progress_ = 100} },function(arg,data) 
 if data.ID and data.ID == "Ok"  then
-print('\27[30;33m~⪼~⪼ THE USER IS SAVE ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;33m»» THE USER IS SAVE ME ↓\n»» '..pv[i]..'\n\27[1;37m')
 else
-print('\27[30;31m~⪼~⪼ THE USER IS BLOCK ME ↓\n~⪼~⪼ '..pv[i]..'\n\27[1;37m')
+print('\27[30;31m»» THE USER IS BLOCK ME ↓\n»» '..pv[i]..'\n\27[1;37m')
 database:srem(bot_id..'BuShInKi:UsersBot',pv[i])  
 sendok = sendok + 1
 end
@@ -6637,19 +6470,19 @@ for i = 1, #group do
 tdcli_function({ID='GetChat',chat_id_ = group[i]
 },function(arg,data)
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusMember" then
-print('\27[30;34m~⪼~⪼ THE BOT IS NOT ADMIN ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;34m»» THE BOT IS NOT ADMIN ↓\n»» '..group[i]..'\n\27[1;37m')
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
 w = w + 1
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusLeft" then
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;35m~⪼~⪼ THE BOT IS LEFT GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;35m»» THE BOT IS LEFT GROUP ↓\n»» '..group[i]..'\n\27[1;37m')
 end
 if data and data.type_ and data.type_.channel_ and data.type_.channel_.status_ and data.type_.channel_.status_.ID == "ChatMemberStatusKicked" then
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
 q = q + 1
-print('\27[30;36m~⪼~⪼ THE BOT IS KICKED GROUP ↓\n~⪼~⪼ '..group[i]..'\n\27[1;37m')
+print('\27[30;36m»» THE BOT IS KICKED GROUP ↓\n»» '..group[i]..'\n\27[1;37m')
 end
 if data and data.code_ and data.code_ == 400 then
 database:srem(bot_id..'BuShInKi:Chek:Groups',group[i])  
@@ -6680,11 +6513,11 @@ return false
 end
 if text == 'تفعيل البوت الخدمي 💠' then
 database:del(bot_id..'BuShInKi:Free:Add:Bots') 
-send(msg.chat_id_, msg.id_,'\n☑┇تم تفعيل البوت الخدمي ') 
+send(msg.chat_id_, msg.id_,'\n📫┇تم تفعيل البوت الخدمي ') 
 end
 if text == 'تعطيل البوت الخدمي 📛' then
 database:set(bot_id..'BuShInKi:Free:Add:Bots',true) 
-send(msg.chat_id_, msg.id_,'\n☑┇تم تعطيل البوت الخدمي') 
+send(msg.chat_id_, msg.id_,'\n📫┇تم تعطيل البوت الخدمي') 
 end
 if text=="اذاعه خاص 📡" and msg.reply_to_message_id_ == 0 then
 if database:get(bot_id.."BuShInKi:Status:Bc") and not DevBuShInKi(msg) then 
@@ -6724,17 +6557,17 @@ return false
 end 
 if text == "تفعيل الاذاعه 🔔" then
 database:del(bot_id.."BuShInKi:Status:Bc") 
-send(msg.chat_id_, msg.id_,"\n☑┇تم تفعيل الاذاعه " ) 
+send(msg.chat_id_, msg.id_,"\n📫┇تم تفعيل الاذاعه " ) 
 return false
 end 
 if text == "تعطيل الاذاعه 🔕" then
 database:set(bot_id.."BuShInKi:Status:Bc",true) 
-send(msg.chat_id_, msg.id_,"\n☑┇تم تعطيل الاذاعه") 
+send(msg.chat_id_, msg.id_,"\n📫┇تم تعطيل الاذاعه") 
 return false
 end 
 if text == "تفعيل المغادره 🔏" then
 database:del(bot_id.."BuShInKi:Left:Bot"..msg.chat_id_)  
-send(msg.chat_id_, msg.id_,"☑┇تم تفعيل مغادرة البوت") 
+send(msg.chat_id_, msg.id_,"📫┇تم تفعيل مغادرة البوت") 
 return false 
 end
 if text == "تعطيل المغادره 🔓" then
@@ -6764,16 +6597,16 @@ send(msg.chat_id_, msg.id_,'🔘┇تم حذف كليشه ستارت')
 end
 if text == ("مسح قائمه العام 📮") and DevBuShInKi(msg) then
 database:del(bot_id.."BuShInKi:GBan:User")
-send(msg.chat_id_, msg.id_, "\n☑┇تم مسح قائمه العام")
+send(msg.chat_id_, msg.id_, "\n📮┇تم مسح قائمه العام")
 return false
 end
 if text == ("مسح المطورين 🚸") and DevBuShInKi(msg) then
 database:del(bot_id.."BuShInKi:Sudo:User")
-send(msg.chat_id_, msg.id_, "\n☐┇ تم مسح قائمة المطورين")
+send(msg.chat_id_, msg.id_, "\n📮┇ تم مسح قائمة المطورين  ")
 end
 if text == ("قائمه العام 🚷") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:GBan:User")
-t = "\n⛔┇قائمة المحظورين عام \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة المحظورين عام \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -6790,7 +6623,7 @@ return false
 end
 if text == ("المطورين 🔱") and DevBuShInKi(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Sudo:User")
-t = "\n👨🏿‍💻 ┇قائمة مطورين البوت \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+t = "\n⛔┇قائمة مطورين البوت \n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -6888,6 +6721,7 @@ end
 end --- Chat_Type = 'UserBot' 
 end
 end
+
 function tdcli_update_callback(data)
 if data.ID == "UpdateChannel" then 
 if data.channel_.status_.ID == "ChatMemberStatusKicked" then 
@@ -6995,9 +6829,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.sticker_.set_id_ then
 function get_info(arg,data)
 if data.username_ ~= false then
-send(msg.chat_id_,0, "⚠┇عذرا يا ~⪼ { (@"..data.username_..")}\n📛┇ الملصق الذي ارسلته تم منعه من المجموعه \n") 
+send(msg.chat_id_,0, "⚠┇عذرا يا » { (@"..data.username_..")}\n📛┇ الملصق الذي ارسلته تم منعه من المجموعه \n") 
 else
-send(msg.chat_id_,0, "⚠┇عذرا يا ~⪼ {["..data.first_name_.."](T.ME/JJJUU)}\n📛┇ الملصق الذي ارسلته تم منعه من المجموعه \n") 
+send(msg.chat_id_,0, "⚠┇عذرا يا » {["..data.first_name_.."](T.ME/JJJUU)}\n📛┇ الملصق الذي ارسلته تم منعه من المجموعه \n") 
 end
 end
 getUser(msg.sender_user_id_,get_info)
@@ -7013,9 +6847,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.photo_.id_ then
 function get_info(arg,data)
 if data.username_ ~= false then
-send(msg.chat_id_,0, 1, "⚠┇عذرا يا ~⪼ { (@"..data.username_..")}\n📛┇ الصوره التي ارسلتها تم منعها من المجموعه \n") 
+send(msg.chat_id_,0, 1, "⚠┇عذرا يا » { (@"..data.username_..")}\n📛┇ الصوره التي ارسلتها تم منعها من المجموعه \n") 
 else
-send(msg.chat_id_,0,"⚠┇عذرا يا ~⪼ {["..data.first_name_.."](T.ME/JJJUU)}\n📛┇ الصوره التي ارسلتها تم منعها من المجموعه \n") 
+send(msg.chat_id_,0,"⚠┇عذرا يا » {["..data.first_name_.."](T.ME/JJJUU)}\n📛┇ الصوره التي ارسلتها تم منعها من المجموعه \n") 
 end
 end
 getUser(msg.sender_user_id_,get_info)
@@ -7031,9 +6865,9 @@ for k,v in pairs(filter) do
 if v == msg.content_.animation_.animation_.persistent_id_ then
 function get_info(arg,data)
 if data.username_ ~= false then
-send(msg.chat_id_,0, "⚠┇عذرا يا ~⪼ { (@"..data.username_..")}\n📛┇ المتحركه التي ارسلتها تم منعها من المجموعه \n" ) 
+send(msg.chat_id_,0, "⚠┇عذرا يا » { (@"..data.username_..")}\n📛┇ المتحركه التي ارسلتها تم منعها من المجموعه \n" ) 
 else
-send(msg.chat_id_,0, "⚠┇عذرا يا ~⪼ {["..data.first_name_.."](T.ME/JJJUU)}\n📛┇ المتحركه التي ارسلتها تم منعها من المجموعه \n" )
+send(msg.chat_id_,0, "⚠┇عذرا يا » {["..data.first_name_.."](T.ME/JJJUU)}\n📛┇ المتحركه التي ارسلتها تم منعها من المجموعه \n" )
 end
 end
 getUser(msg.sender_user_id_,get_info)
@@ -7068,7 +6902,7 @@ local Name_Bot = (database:get(bot_id.."BuShInKi:Name:Bot") or "BuShInKi")
 if not database:get(bot_id.."BuShInKi:Fun_Bots"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
-local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂??‍♀️','مو خوش ولد 🤓' } 
+local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه 🌝','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂🤷‍♀️','مو خوش ولد 🤓' } 
 send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
 end   
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
@@ -7097,9 +6931,9 @@ local Text = result.content_.text_
 if database:get(bot_id.."BuShInKi:Lock:edit"..msg.chat_id_) and not Text and not BasicConstructor(result) then
 local list = database:smembers(bot_id.."BuShInKi:Constructor"..msg.chat_id_)
 if #list == 0 then
-Reply_Status(result,result.sender_user_id_,"reply","⚠┇قام بالتعديل على الميديا")  
+Reply_Status(result,result.sender_user_id_,"reply","📬┇قام بالتعديل على الميديا")  
 else
-tt = "\n⛔┇يا منشئين\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+tt = "\n⛔┇يا منشئين\n┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉ \n"
 for k,v in pairs(list) do
 local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
 if username then
@@ -7239,7 +7073,7 @@ end
 end
 end
 if (data.ID == "UpdateOption" and data.value_.value_ == "Ready") then
-print('\27[30;32m~⪼~⪼ يرجى الاننتضار لحين تنظيف المجموعات الوهميه ««\n\27[1;37m')
+print('\27[30;32m»» يرجى الاننتضار لحين تنظيف المجموعات الوهميه ««\n\27[1;37m')
 local list = database:smembers(bot_id..'BuShInKi:UsersBot')  
 for k,v in pairs(list) do 
 tdcli_function({ID='GetChat',chat_id_ = v},function(arg,data) end,nil) 
