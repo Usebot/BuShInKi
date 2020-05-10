@@ -1536,7 +1536,7 @@ return false
 end 
 if text == "قفل الكانسر" and Owner(msg) then 
 database:set(bot_id.."BuShInKi:lock:kanser"..msg.chat_id_,true) 
-Reply_Status(msg,msg.sender_user_id_,"lock","⌔︙ تم قفل الكانسر ")
+send(msg,msg.sender_user_id_,"lock","⌔︙ تم قفل الكانسر ")
 return false
 end 
 if text == "قفل الصور"and Addictive(msg) then
@@ -1566,7 +1566,7 @@ return false
 end 
 if text == "فتح الكانسر" and Owner(msg) then 
 database:del(bot_id.."BuShInKi:lock:kanser"..msg.chat_id_) 
-Reply_Status(msg,msg.sender_user_id_,"unlock","⌔︙تم فتح الكانسر ")
+send(msg,msg.sender_user_id_,"unlock","⌔︙تم فتح الكانسر ")
 return false
 end 
 if text == "قفل الفيديو" and Addictive(msg) then
