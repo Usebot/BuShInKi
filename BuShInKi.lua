@@ -3652,10 +3652,6 @@ send(msg.chat_id_,msg.id_,"??┇ليست لدي صلاحية التثبيت ير
 end
 end,nil)
 end
-if text and text:match('^وضع عدد الكانسر (%d+)$') and Owner(msg) then 
-local Num = text:match('^وضع عدد الكانسر (%d+)$')
-database:set(bot_id.."BuShInKi:Num:kansers"..msg.chat_id_,Num)
-send(msg.chat_id_, msg.id_, '\n⌔︙تم وضع عدد حروف الاسم {'..Num..'} حرف')
 
 if text and text:match("^وضع تكرار (%d+)$") and Addictive(msg) then   
 local Num = text:match("وضع تكرار (.*)")
