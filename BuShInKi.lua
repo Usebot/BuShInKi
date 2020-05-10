@@ -2136,7 +2136,7 @@ send(msg.chat_id_, msg.id_, t)
 end
 
 if text == ("حظر عام") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBuShInKi(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2226,7 +2226,7 @@ return false
 end
 
 if text == ("رفع مطور") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBuShInKi(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2257,7 +2257,7 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false 
 end
 if text and text:match("^رفع مطور (%d+)$") and DevBuShInKi(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2296,7 +2296,7 @@ Reply_Status(msg,userid,"reply","🔰┇تم تنزيلة مطور من البو
 return false 
 end
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2419,7 +2419,7 @@ end,nil)
 end
 
 if text == ("رفع منشئ اساسي") and tonumber(msg.reply_to_message_id_) ~= 0 and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2485,7 +2485,7 @@ return false
 end
 
 if text == "رفع منشئ" and tonumber(msg.reply_to_message_id_) ~= 0 and BasicConstructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2547,7 +2547,7 @@ Reply_Status(msg,userid,"reply","🔰┇تم تنزيلة منشئ من البو
 end
 
 if text == ("رفع مدير") and tonumber(msg.reply_to_message_id_) ~= 0 and Constructor(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2613,7 +2613,7 @@ return false
 end
 
 if text == ("رفع ادمن") and tonumber(msg.reply_to_message_id_) ~= 0 and Owner(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2690,7 +2690,7 @@ return false
 end
 
 if text == ("رفع مميز") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2741,7 +2741,7 @@ return false
 end
 
 if (text == ("تنزيل مميز")) and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2885,7 +2885,7 @@ end
 end
 
 if text == ("حظر") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -2984,7 +2984,7 @@ end
 return false
 end
 if text == ("الغاء حظر") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3035,7 +3035,7 @@ return false
 end
 
 if text == ("كتم") and msg.reply_to_message_id_ ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3125,7 +3125,7 @@ return false
 end
 
 if text == ("تقيد") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3206,7 +3206,7 @@ Reply_Status(msg,userid,"reply","💢┇تم الغاء تقييده")
 return false
 end
 if text == ("طرد") and msg.reply_to_message_id_ ~=0 and Addictive(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3370,7 +3370,7 @@ database:hset(bot_id.."BuShInKi:flooding:settings:"..msg.chat_id_ ,"floodtime" ,
 send(msg.chat_id_, msg.id_,"📮┇تم وضع زمن التكرار ("..Num..")") 
 end
 if text == "ضع رابط" or text == "وضع رابط" then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3383,7 +3383,7 @@ return false
 end
 end
 if text == "تفعيل جلب الرابط" or text == 'تفعيل الرابط' then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3402,7 +3402,7 @@ send(msg.chat_id_, msg.id_,"☑┇تم تعطيل جلب رابط المجموع
 return false end
 end
 if text == "الرابط" then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3637,7 +3637,7 @@ end
 end
 
 if text == "الاوامر المضافه" and Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -3669,7 +3669,7 @@ send(msg.chat_id_, msg.id_,"🔰┇تم مسح جميع الاوامر التي 
 end
 end
 if text == "اضف امر" and Constructor(msg) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -4077,7 +4077,7 @@ end
 end
 
 if text == "اضف رد للكل" and DevBuShInKi(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -4985,7 +4985,7 @@ local text =
 send(msg.chat_id_, msg.id_,text)     
 end    
 if text == "تعطيل اوامر التحشيش" and Owner(msg) then    
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -5000,7 +5000,7 @@ database:del(bot_id.."BuShInKi:Fun_Bots"..msg.chat_id_)
 end
 
 if text == 'تفعيل الايدي' and Owner(msg) then   
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -5014,7 +5014,7 @@ database:set(bot_id..'BuShInKi:Lock:ID:Bot'..msg.chat_id_,true)
 send(msg.chat_id_, msg.id_,'☑┇تم تعطيل الايدي') 
 end
 if text == 'تفعيل الايدي بالصوره' and Owner(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -5066,7 +5066,7 @@ send(msg.chat_id_, msg.id_,'📌┇تم تعين الايدي')
 end
 
 if text == 'ايدي' and tonumber(msg.reply_to_message_id_) == 0 and not database:get(bot_id..'BuShInKi:Lock:ID:Bot'..msg.chat_id_) then
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -5574,7 +5574,7 @@ database:del(bot_id.."BuShInKi:Lock:Games"..msg.chat_id_)
 send(msg.chat_id_, msg.id_,"\n☑┇تم تعطيل الالعاب") 
 end
 if text == "تفعيل الالعاب" and Owner(msg) then  
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -6346,7 +6346,7 @@ end ---- Chat_Type = 'GroupBot'
 end ---- Chat_Type = 'GroupBot' 
 
 if text == 'تفعيل' and DevBot(msg) then 
-local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
@@ -6399,7 +6399,7 @@ end,nil)
 end,nil)
 end
 if text == 'تعطيل' and DevBot(msg) then
- local url,res = http.request('https://sad-bot.cf/hm/Api.php?id='..msg.sender_user_id_)
+ local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
 if data.Ch_Member.BuShInKi ~= true then
 send(msg.chat_id_,msg.id_,'👤┇لا يمكنك استخدام البوت\n📛┇عليك الاشتراك في قناة السورس\n📤┇لتتمكن من استخدام الاوامر \n🔰┇CH ~ [@BuShInKi]')   
