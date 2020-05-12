@@ -6313,6 +6313,14 @@ database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_)
 send(msg.chat_id_,msg.id_,'🔰︙تم حفظ كليشة المطور')
 return false
 end
+if text and text == "تفعيل تاك الادمنيه" and Owner(msg) then 
+database:set(bot_id.."BuShInKi:Tag:Admins:"..msg.chat_id_,true)
+send(msg.chat_id_, msg.id_,"⚠️┇تم تفعيل تاك الادمنيه")
+end
+if text and text == "تعطيل تاك الادمنيه" and Owner(msg) then 
+database:del(bot_id.."BuShInKi:Tag:Admins:"..msg.chat_id_)
+send(msg.chat_id_, msg.id_, "⚠️┇تم تعطيل تاك الادمنيه")
+end
 if text == 'صيح الادمنيه' or text == "تاك للادمنيه" or text == "وين الادمنيه" then
 if database:get(bot_id.."BuShInKi:Tag:Admins:"..msg.chat_id_) then 
 tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(a,data)
