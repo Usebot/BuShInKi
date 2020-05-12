@@ -6313,6 +6313,33 @@ database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_)
 send(msg.chat_id_,msg.id_,'🔰︙تم حفظ كليشة المطور')
 return false
 end
+if text == 'صيح الادمنيه' or text == "تاك للادمنيه" or text == "وين الادمنيه" then
+if database:get(bot_id.."BuShInKi:Tag:Admins:"..msg.chat_id_) then 
+tdcli_function ({ID = "GetChannelMembers",channel_id_ = msg.chat_id_:gsub("-100",""),filter_ = {ID = "ChannelMembersAdministrators"},offset_ = 0,limit_ = 100},function(a,data)
+tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,b)  
+if b.username_ then 
+User_id = "@"..b.username_
+else
+User_id = msg.sender_user_id_
+end
+local t = "\n⚠️┇المستخدم ~ ["..User_id .."] يصيح الادمنيه \n\n"
+k = 0
+for i,v in pairs(data.members_) do
+if bot_id ~= v.user_id_ then 
+k = k + 1
+local username = database:get(bot_id.."BuShInKi:User:Name"..v.user_id_)
+if username then
+t = t..""..k.."- ([@"..username.."])\n"
+else
+t = t..""..k.."- (`"..v.user_id_.."`)\n"
+end
+end
+end
+send(msg.chat_id_, msg.id_,t)
+end,nil)
+end,nil)
+end
+end   
 if text == 'رفع النسخه الاحتياطيه' and DevBuShInKi(msg) then   
 if tonumber(msg.reply_to_message_id_) > 0 then
 function by_reply(extra, result, success)   
