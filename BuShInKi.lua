@@ -2101,6 +2101,22 @@ t = "❗️︙لا يوجد اعضاء مميزين"
 end
 send(msg.chat_id_, msg.id_, t)
 end
+if text == ("المطايه") and Addictive(msg) then
+local list = database:smembers(bot_id.."BuShInKi:Mote:User"..msg.chat_id_)
+t = "\n🦓︙قائمة المطايه\nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
+for k,v in pairs(list) do
+local username = database:get(bot_id.."BuShInKi:User:Name" .. v)
+if username then
+t = t..""..k.."- ([@"..username.."])\n"
+else
+t = t..""..k.."- (`"..v.."`)\n"
+end
+end
+if #list == 0 then
+t = "❗️︙لا توجد مطايه في المجموعه"
+end
+send(msg.chat_id_, msg.id_, t)
+end
 if text == ("المكتومين") and Addictive(msg) then
 local list = database:smembers(bot_id.."BuShInKi:Muted:User"..msg.chat_id_)
 t = "\n🚫︙قائمة المكتومين \nꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹ \n"
