@@ -2885,6 +2885,86 @@ tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInK
 return false
 end
 
+if text == ("رفع مطي") and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@BuShInKi] ⚜️')
+return false 
+end
+if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'✖︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+return false
+end
+function Function_BuShInKi(extra, result, success)
+database:sadd(bot_id.."BuShInKi:Mote:User"..msg.chat_id_, result.sender_user_id_)
+Reply_Status(msg,result.sender_user_id_,"reply","🦓︙تم رفعة مطي في البوت")  
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
+return false
+end
+if text and text:match("^رفع مطي @(.*)$") and Addictive(msg) then 
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@BuShInKi] ⚜️')
+return false 
+end
+local username = text:match("^رفع مطي @(.*)$") 
+if not Constructor(msg) and database:get(bot_id.."Add:Group:Cheking"..msg.chat_id_) then 
+send(msg.chat_id_, msg.id_,'✖︙لا تستطيع رفع احد وذالك لان تم تعطيل الرفع من قبل المنشئين')
+return false
+end
+function Function_BuShInKi(extra, result, success)
+if result.id_ then
+if (result and result.type_ and result.type_.ID == "ChannelChatInfo") then
+send(msg.chat_id_,msg.id_,"💢︙عذرا عزيزي المستخدم هاذا معرف قناة يرجى استخدام الامر بصوره صحيحه !")   
+return false 
+end      
+database:sadd(bot_id.."BuShInKi:Mote:User"..msg.chat_id_, result.id_)
+Reply_Status(msg,result.id_,"reply","🦓︙تم رفعة مطي في البوت")  
+else
+send(msg.chat_id_, msg.id_,"💢︙لا يوجد حساب بهاذا المعرف")
+end
+end
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInKi, nil)
+return false
+end
+
+if (text == ("تنزيل مطي")) and tonumber(msg.reply_to_message_id_) ~= 0 and Addictive(msg) then 
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@BuShInKi] ⚜️')
+return false 
+end
+function Function_BuShInKi(extra, result, success)
+database:srem(bot_id.."BuShInKi:Mote:User"..msg.chat_id_, result.sender_user_id_)
+Reply_Status(msg,result.sender_user_id_,"reply","🦓︙تم تنزيله من مطي الى انسان")  
+end
+tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, Function_BuShInKi, nil)
+return false
+end
+if text and text:match("^تنزيل مطي @(.*)$") and Addictive(msg) then 
+local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
+data = JSON.decode(url)
+if data.Ch_Member.BuShInKi ~= true then
+send(msg.chat_id_,msg.id_,'• اهلا بك عزيزي 🔱 •\n• لايمكنك استخدام البوت ✅ •\n• عليك الاشتراك في القناة 🔽 •\n• [@BuShInKi] ⚜️')
+return false 
+end
+local username = text:match("^تنزيل مطي @(.*)$") 
+function Function_BuShInKi(extra, result, success)
+if result.id_ then
+database:srem(bot_id.."BuShInKi:Mote:User"..msg.chat_id_, result.id_)
+Reply_Status(msg,result.id_,"reply","🔰︙تم تنزيله من مطي الى انسان")  
+else
+send(msg.chat_id_, msg.id_,"💢︙لا يوجد حساب بهاذا المعرف")
+end
+end
+tdcli_function ({ID = "SearchPublicChat",username_ = username}, Function_BuShInKi, nil)
+return false
+end
+
 if text and text:match("^رفع مميز (%d+)$") and Addictive(msg) then 
 local url,res = http.request('https://sad-bot.cf/mh/Api.php?id='..msg.sender_user_id_)
 data = JSON.decode(url)
