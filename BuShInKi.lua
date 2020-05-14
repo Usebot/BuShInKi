@@ -6137,20 +6137,6 @@ end
 end
 end,nil)   
 end
-if text and text:match('^وضع عدد الكانسر (%d+)$') and Owner(msg) then 
-local Num = text:match('^وضع عدد الكانسر (%d+)$')
-database:set(bot_id..'BuShInKi:Num:kansers'..msg.chat_id_,Num)
-send(msg.chat_id_, msg.id_, '\n⌔︙تم وضع عدد حروف الاسم {'..Num..'} حرف')
-if text == "فتح الكانسر" and Owner(msg) then 
-database:set(bot_id.."BuShInKi:Num:kansers"..msg.chat_id_) 
-send(msg.chat_id_, msg.id_,"☑︙تم تفعيل ترحيب المجموعه") 
-return false  
-end
-if text == "قفل الكانسر" and Owner(msg) then 
-database:del(bot_id.."BuShInKi:Num:kansers"..msg.chat_id_,true) 
-send(msg.chat_id_, msg.id_,"☑︙تم تعطيل ترحيب المجموعه") 
-return false  
-end
 if text == 'تفعيل ضافني' and Owner(msg) then   
 database:del(bot_id..'BuShInKi:Lock:Added:Me'..msg.chat_id_)  
 send(msg.chat_id_, msg.id_,'☑┇تم تفعيل امر منو ضافني') 
