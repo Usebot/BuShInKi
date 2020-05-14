@@ -1555,6 +1555,16 @@ database:set(bot_id.."BuShInKi:Lock:Video"..msg.chat_id_,"ked")
 Reply_Status(msg,msg.sender_user_id_,"lockkid","🔐︙تم قفـل الفيديو")  
 return false
 end 
+if text == "فتح  الكانسر" and Owner(msg) then 
+database:del(bot_id.."BuShInKi:Num:kansers"..msg.chat_id_)  
+Reply_Status(msg,msg.sender_user_id_,"unlock","⚠️︙تم فتح الكانسر")  
+return false
+end 
+if text == "قفل الكانسر" and Owner(msg) then 
+database:set(bot_id.."BuShInKi:Num:kansers"..msg.chat_id_,"del")  
+Reply_Status(msg,msg.sender_user_id_,"lock","🔐︙تم قفـل الفيديو")  
+return false
+end
 if text == "قفل الفيديو بالكتم" and Addictive(msg) then
 database:set(bot_id.."BuShInKi:Lock:Video"..msg.chat_id_,"ktm")  
 Reply_Status(msg,msg.sender_user_id_,"lockktm","🔐︙تم قفـل الفيديو")  
