@@ -3824,6 +3824,16 @@ end
 send(msg.chat_id_, msg.id_,"["..Welcome.."]") 
 return false  
 end
+if text == "فتح الكانسر" and Owner(msg) then 
+database:set(bot_id.."BuShInKi:Num:kansers"..msg.chat_id_) 
+send(msg.chat_id_, msg.id_,"☑︙تم تفعيل ترحيب المجموعه") 
+return false  
+end
+if text == "قفل الكانسر" and Owner(msg) then 
+database:del(bot_id.."BuShInKi:Num:kansers"..msg.chat_id_,true) 
+send(msg.chat_id_, msg.id_,"☑︙تم تعطيل ترحيب المجموعه") 
+return false  
+end
 if text == "تفعيل الترحيب" and Addictive(msg) then  
 database:set(bot_id.."BuShInKi:Chek:Welcome"..msg.chat_id_,true) 
 send(msg.chat_id_, msg.id_,"☑︙تم تفعيل ترحيب المجموعه") 
@@ -6248,7 +6258,7 @@ storm = ''
 else
 storm = '\n🚯︙ تم ازالة ~'..w..' مجموعه لان البوت عضو'
 end
-send(msg.chat_id_, msg.id_,'*👥︙ عدد المجموعات الان ~ '..#group..' مجموعه '..storm..''..taha..'\n📬︙اصبح عدد المجموعات الان ~ '..sendok..' مجموعات*\n')   
+send(msg.chat_id_, msg.id_,'*👥︙ عدد المجموعات الان ~ '..#group..' مجموعه '..storm..''..taha..'\n??︙اصبح عدد المجموعات الان ~ '..sendok..' مجموعات*\n')   
 end
 end
 end,nil)
