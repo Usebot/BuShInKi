@@ -7458,20 +7458,6 @@ if msg.sender_user_id_ and Muted_Groups(msg.chat_id_,msg.sender_user_id_) then
 DeleteMessage(msg.chat_id_, {[0] = msg.id_})  
 return false  
 end
-if msg.content_.ID == "MessageChatJoinByLink" then
-if redis:get(bot_id.."BuShInKi:lock:kanser"..msg.chat_id_) then
-tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
-local last_ = data.last_name_ or ''
-local first_ = data.first_name_ or ''
-local taha = (first_..''..last_)
-local Num = (database:get(bot_id..'BuShInKi:Num:kansers'..msg.chat_id_) or 25)
-if string.len(taha) > tonumber(Num) then
-send(msg.chat_id_, msg.id_,'\n⌔︙الكانسر مقفول يرجى زغرفه اسمك اولاً\n ┉ ┉ ┉ ┉ ┉ ┉ ┉ ┉  ┉ ┉ ┉ ┉\n⌔︙ اضغط هنا لزغرفه اسمك.')
-https.request("https://api.telegram.org/bot"..token.."/restrictChatMember?chat_id="..msg.chat_id_.."&user_id="..msg.sender_user_id_)
-end
-end,nil)   
-return false
-end
 --------------------------------------------------------------------------------------------------------------
 if tonumber(msg.sender_user_id_) ~= tonumber(bot_id) then  
 if msg.sender_user_id_ and Ban_Groups(msg.chat_id_,msg.sender_user_id_) then 
