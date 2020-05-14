@@ -7609,6 +7609,7 @@ end
 end
 return false
 end
+end
 ------------------------------------------------------------------------
 if text and database:get(bot_id.."BuShInKi:Del:Cmd:Group"..msg.chat_id_..":"..msg.sender_user_id_) == "true" then
 local NewCmmd = database:get(bot_id.."BuShInKi:Set:Cmd:Group:New1"..msg.chat_id_..":"..text)
