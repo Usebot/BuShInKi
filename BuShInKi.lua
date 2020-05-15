@@ -7164,8 +7164,7 @@ send(msg.chat_id_, msg.id_,'📬︙احصائيات البوت \n\n👥︙عدد
 end
 if text == 'ضع اسم للبوت ®' then 
 database:setex(bot_id..'BuShInKi:Set:Name:Bot'..msg.sender_user_id_,300,true) 
-send(msg.chat_id_, msg.id_,"📫︙ ارسل لي الاسم الان ")  
-end
+send(msg.chat_id_, msg.id_,'📫︙ ارسل لي الاسم الان') 
 return false
 end
 if text == "تنظيف المشتركين 👤" then
