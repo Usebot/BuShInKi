@@ -7162,7 +7162,7 @@ local Groups = database:scard(bot_id..'BuShInKi:Chek:Groups')
 local Users = database:scard(bot_id..'BuShInKi:UsersBot')  
 send(msg.chat_id_, msg.id_,'📬︙احصائيات البوت \n\n👥︙عدد المجموعات *~ '..Groups..'\n👤︙عدد المشتركين ~ '..Users..'*')
 end
-if text == "ضع اسم للبوت ®" then 
+if text == 'ضع اسم للبوت ®' then 
 database:setex(bot_id.."BuShInKi:Set:Name:Bot"..msg.sender_user_id_,300,true) 
 send(msg.chat_id_, msg.id_,"📫︙ ارسل لي الاسم الان ")  
 end
