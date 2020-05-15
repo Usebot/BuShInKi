@@ -6475,7 +6475,7 @@ database:del(bot_id..'BuShInKi:Text_Dev')
 send(msg.chat_id_, msg.id_,'☑︙ تم حذف كليشه المطور')
 end
 if text == "وضع كليشه المطور" and DevBuShInKi(msg) then
-database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.sender_user_id_,1000,true)
+database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.sender_user_id_,300,true)
 send(msg.chat_id_,msg.id_,'📥︙ ارسل الكليشه الان')
 return false
 end
@@ -7323,7 +7323,7 @@ send(msg.chat_id_, msg.id_,'📬︙ارسل لي الكليشه الان')
 return false
 end
 if text == 'ضع كليشه المطور 👨‍💻' then
-database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.sender_user_id_,1000,true)
+database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.sender_user_id_,300,true)
 send(msg.chat_id_,msg.id_,'📥︙ ارسل الكليشه الان')
 return false
 end
