@@ -7327,12 +7327,6 @@ database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user
 send(msg.chat_id_,msg.id_,'⌔︙ ارسل لي الكليشه الان')
 return false
 end
-if text and database:get(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_) then
-if text == 'الغاء' or text == 'الغاء ✖' then 
-database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_)
-send(msg.chat_id_,msg.id_,'⌔︙تم الغاء حفظ كليشة المطور')
-return false
-end
 database:set(bot_id..'BuShInKi:Set:Text_Dev',text)
 database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_)
 send(msg.chat_id_,msg.id_,'⌔︙تم حفظ كليشة المطور')
@@ -7648,7 +7642,7 @@ local Name_Bot = (database:get(bot_id.."BuShInKi:Name:Bot") or "BuShInKi")
 if not database:get(bot_id.."BuShInKi:Fun_Bots"..msg.chat_id_) then
 if text ==  ""..Name_Bot..' شنو رئيك بهاذا' and tonumber(msg.reply_to_message_id_) > 0 then     
 function FunBot(extra, result, success) 
-local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶🙊','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه ??','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂??‍♀️','مو خوش ولد 🤓' } 
+local Fun = {'لوكي وزاحف من ساع زحفلي وحضرته 😒','خوش ولد و ورده مال الله 🙄','يلعب ع البنات 🙄', 'ولد زايعته الكاع 😶??','صاك يخبل ومعضل ','محلو وشواربه جنها مكناسه 😂🤷🏼‍♀️','اموت عليه ??','هوه غير الحب مال اني ❤️','مو خوش ولد صراحه ☹️','ادبسز وميحترم البنات  ', 'فد واحد قذر 🙄😒','ماطيقه كل ما اكمشه ريحته جنها بخاخ بف باف مال حشرات 😂??‍♀️','مو خوش ولد 🤓' } 
 send(msg.chat_id_, result.id_,''..Fun[math.random(#Fun)]..'')   
 end   
 tdcli_function ({ID = "GetMessage",chat_id_ = msg.chat_id_,message_id_ = tonumber(msg.reply_to_message_id_)}, FunBot, nil)
