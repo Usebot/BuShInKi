@@ -7323,7 +7323,7 @@ send(msg.chat_id_, msg.id_,'📬︙ارسل لي الكليشه الان')
 return false
 end
 if text == 'ضع كليشه المطور 👨‍💻'  then
-database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_,true)
+database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.sender_user_id_,true)
 send(msg.chat_id_,msg.id_,'📥︙ ارسل الكليشه الان')
 return false
 end
