@@ -7327,12 +7327,6 @@ database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user
 send(msg.chat_id_,msg.id_,'⌔︙ ارسل لي الكليشه الان')
 return false
 end
-database:set(bot_id..'BuShInKi:Set:Text_Dev',text)
-database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_)
-send(msg.chat_id_,msg.id_,'⌔︙تم حفظ كليشة المطور')
-send(msg.chat_id_,msg.id_,text)
-return false
-end
 if text == 'حذف كليشه ستارت 🗑️' then
 database:del(bot_id..'Start:Bot') 
 send(msg.chat_id_, msg.id_,'📬︙تم حذف كليشه ستارت') 
