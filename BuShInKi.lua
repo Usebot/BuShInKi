@@ -7322,9 +7322,21 @@ database:set(bot_id..'Start:Bots',true)
 send(msg.chat_id_, msg.id_,'📬︙ارسل لي الكليشه الان') 
 return false
 end
-if text == 'ضع كليشه المطور 👨‍💻'  then
-database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.sender_user_id_,true)
-send(msg.chat_id_,msg.id_,'📥︙ ارسل الكليشه الان')
+if text == 'تغير كليشة المطور 🆕' then
+database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_,true)
+send(msg.chat_id_,msg.id_,'⌔︙ ارسل لي الكليشه الان')
+return false
+end
+if text and database:get(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_) then
+if text == 'الغاء' or text == 'الغاء ✖' then 
+database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_)
+send(msg.chat_id_,msg.id_,'⌔︙تم الغاء حفظ كليشة المطور')
+return false
+end
+database:set(bot_id..'BuShInKi:Set:Text_Dev',text)
+database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_..':'..msg.sender_user_id_)
+send(msg.chat_id_,msg.id_,'⌔︙تم حفظ كليشة المطور')
+send(msg.chat_id_,msg.id_,text)
 return false
 end
 if text == 'حذف كليشه ستارت 🗑️' then
