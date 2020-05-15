@@ -6470,24 +6470,24 @@ os.execute("rm -fr BuShInKi_Files/*")
 send(msg.chat_id_,msg.id_,"☑︙تم حذف جميع الملفات")
 return false
 end
-if text == "حذف كليشه المطور" and DevBuShInKi(msg) then
+if text == 'حذف كليشه المطور' and DevBuShInKi(msg) then
 database:del(bot_id..'BuShInKi:Text_Dev')
-send(msg.chat_id_, msg.id_,'☑︙ تم حذف كليشه المطور')
+send(msg.chat_id_, msg.id_,'☑┇ تم حذف كليشه المطور')
 end
-if text == "وضع كليشه المطور" and DevBuShInKi(msg) then
-database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.sender_user_id_,300,true)
-send(msg.chat_id_,msg.id_,'📥︙ ارسل الكليشه الان')
+if text == 'وضع كليشه المطور' and DevBuShInKi(msg) then
+database:set(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_,true)
+send(msg.chat_id_,msg.id_,'📫┇ ارسل الكليشه الان')
 return false
 end
-if text and database:get(bot_id.."BuShInKi:Set:Text_Dev"..msg.sender_user_id_) then
-if text == "الغاء" then 
-database:del(bot_id.."BuShInKi:Set:Text_Dev"..msg.sender_user_id_)
-send(msg.chat_id_,msg.id_,"🔖︙تم الغاء حفظ كليشة المطور")
+if text and database:get(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_) then
+if text == 'الغاء' then 
+database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_)
+send(msg.chat_id_,msg.id_,'🔖┇تم الغاء حفظ كليشة المطور')
 return false
 end
-database:set(bot_id.."BuShInKi:Text_Dev",text)
-database:del(bot_id.."BuShInKi:Set:Text_Dev"..msg.sender_user_id_)
-send(msg.chat_id_,msg.id_,"🔰︙تم حفظ كليشة المطور")
+database:set(bot_id..'BuShInKi:Text_Dev',text)
+database:del(bot_id..'BuShInKi:Set:Text_Dev'..msg.chat_id_)
+send(msg.chat_id_,msg.id_,'🔰┇تم حفظ كليشة المطور')
 return false
 end
 if text and text == "تفعيل تاك الادمنيه" and Owner(msg) then 
@@ -7078,8 +7078,7 @@ local keyboard = {
 {'حذف كليشه ستارت 🗑️','ضع كليشه ستارت 📑'},
 {'مسح المطورين 👨🏽‍💻','تحديث الملفات 🗂️'},
 {'مسح قائمه العام 📮','قائمه العام 🚷'},
-{'ضع كليشه المطور 👨‍💻','تحديث السورس ☑️'},
-{'جلب نسخه احتياطيه 📁'},
+{'جلب نسخه احتياطيه 📁','تحديث السورس ☑️'},
 {'الغاء ✖'}
 }
 send_inline_key(msg.chat_id_,Text,keyboard)
