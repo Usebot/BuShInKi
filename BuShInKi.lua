@@ -6400,19 +6400,19 @@ if res == 200 then
 local Get_info, res = pcall(JSON.decode,Get_Files);
 vardump(res.plugins_)
 if Get_info then
-local TextS = "\n🗂︙اهلا بك في متجر ملفات BuShInKi \n📮︙الملفات الموجوده حاليا \nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n\n"
-local TextE = "\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n📌︙تدل علامة (✔) الملف مفعل\n".."📌︙تدل علامة (✖) الملف معطل\n"
+local TextS = "\n📁︙اهلا بك متجر بوشنكي  \n📮︙ملفات السورس ↓ \nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n\n"
+local TextE = "\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n🔰︙تدل علامة (✔︎) الملف مفعل\n".."🔰︙تدل علامة (✘) الملف معطل\nꔹꔹ┉♦️┉ ┉ ┉ ┉♦️┉ꔹꔹ\n🔖┇Ch ~⪼ @BuShInKiX\n"
 local NumFile = 0
 for name,Info in pairs(res.plugins_) do
 local Check_File_is_Found = io.open("BuShInKi_Files/"..name,"r")
 if Check_File_is_Found then
 io.close(Check_File_is_Found)
-CeckFile = "(✔)"
+CeckFile = "(✔︎)"
 else
-CeckFile = "(✖)"
+CeckFile = "(✘)"
 end
 NumFile = NumFile + 1
-TextS = TextS..'*'..NumFile.."~⪼* {`"..name..'`} ~⪼ '..CeckFile..'\n[- File Information]('..Info..')\n'
+TextS = TextS..'*'..NumFile.."~⪼* {"..name..'} ~⪼ '..CeckFile..'\n[- File Information]('..Info..')\n'
 end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
