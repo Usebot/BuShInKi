@@ -6412,7 +6412,7 @@ else
 CeckFile = "(✘)"
 end
 NumFile = NumFile + 1
-TextS = TextS..'*'..NumFile.."~⪼* {"..name..'} ~⪼ '..CeckFile..'\n[- File Information]('..Info..')\n'
+TextS = TextS..'*'..NumFile.."~⪼* {"..name..'} ~⪼ '..CeckFile..'\n[🔍 - Link Files]('..Info..')\n'
 end
 send(msg.chat_id_, msg.id_,TextS..TextE) 
 end
