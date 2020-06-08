@@ -1879,6 +1879,20 @@ end
 end
 end
 ------------------------------------------------------------------------
+if BuShInKi_Msg and not Special(msg) then  
+local BuShInKi_Msg = database:get(bot_id.."Add:Filter:Rp2"..text..msg.chat_id_)   
+if BuShInKi_Msg then    
+tdcli_function ({ID = "GetUser",user_id_ = msg.sender_user_id_},function(arg,data) 
+if data.username_ ~= false then
+send(msg.chat_id_,0,"⚠|العضو : {["..data.first_name_.."](T.ME/"..data.username_..")}\n🚫|["..BuShInKi_Msg.."] \n") 
+else
+send(msg.chat_id_,0,"⚠|العضو : {["..data.first_name_.."](T.ME/BOBBW)}\n🚫|["..BuShInKi_Msg.."] \n") 
+end
+end,nil)   
+DeleteMessage(msg.chat_id_, {[0] = msg.id_})     
+return false
+end
+end
 if msg.content_.ID == 'MessageAnimation' and not Manager(msg) then 
 local filter = database:smembers(bot_id.."filteranimation"..msg.chat_id_)
 for k,v in pairs(filter) do
@@ -3073,7 +3087,7 @@ local textchuser = database:get(bot_id..'text:ch:user')
 if textchuser then
 send(msg.chat_id_, msg.id_,'['..textchuser..']')
 else
-send(msg.chat_id_, msg.id_,'🔖┇لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n 📌┇اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
+send(msg.chat_id_, msg.id_,'??┇لا تستطيع استخدام البوت يرجى الاشتراك في القناة حتى تتمكن من استخدام الاوامر \n 📌┇اشترك هنا ['..database:get(bot_id..'add:ch:username')..']')
 end
 return false
 end
@@ -6654,6 +6668,47 @@ database:del(bot_id..'Get:Welcome:Group'..msg.chat_id_)
 send(msg.chat_id_, msg.id_,'💠┇تم ازالة ترحيب المجموعه') 
 end
 end
+if text and text == "منع" and msg.reply_to_message_id_ == 0 and Manager(msg)  then       
+send(msg.chat_id_, msg.id_,"🚫|ارسل الكلمه لمنعها")  
+database:set(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"rep")  
+return false  
+end    
+if text then   
+local tsssst = database:get(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+if tsssst == "rep" then   
+send(msg.chat_id_, msg.id_,"🚸|ارسل التحذير عند ارسال الكلمه")  
+database:set(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"repp")  
+database:set(bot_id.."BuShInKi1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_, text)  
+database:sadd(bot_id.."BuShInKi1:List:Filter"..msg.chat_id_,text)  
+return false  end  
+end
+if text then  
+local test = database:get(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+if test == "repp" then  
+send(msg.chat_id_, msg.id_,"🔖|تم منع الكلمه مع التحذير")  
+database:del(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+local test = database:get(bot_id.."BuShInKi1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
+if text then   
+database:set(bot_id.."BuShInKi1:Add:Filter:Rp2"..test..msg.chat_id_, text)  
+end  
+database:del(bot_id.."BuShInKi1:filtr1:add:reply2"..msg.sender_user_id_..msg.chat_id_)  
+return false  end  
+end
+
+if text == "الغاء منع" and msg.reply_to_message_id_ == 0 and Manager(msg) then    
+send(msg.chat_id_, msg.id_,"🔖|ارسل الكلمه الان")  
+database:set(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_,"reppp")  
+return false  end
+if text then 
+local test = database:get(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+if test and test == "reppp" then   
+send(msg.chat_id_, msg.id_,"📮|تم الغاء منعها ")  
+database:del(bot_id.."BuShInKi1:Add:Filter:Rp1"..msg.sender_user_id_..msg.chat_id_)  
+database:del(bot_id.."BuShInKi1:Add:Filter:Rp2"..text..msg.chat_id_)  
+database:srem(bot_id.."BuShInKi1:List:Filter"..msg.chat_id_,text)  
+return false  end  
+end
+
 if text == 'منع' and tonumber(msg.reply_to_message_id_) > 0 and Manager(msg) then     
 function cb(a,b,c) 
 textt = '📮┇تم منع '
